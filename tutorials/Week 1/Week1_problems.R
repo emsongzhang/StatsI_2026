@@ -18,12 +18,30 @@ y <- c(0, 4, 4, 5, 7, 10)
 
 # (1) find sum of y using the built-in R function
 
+sum(y)
+
 # (2) find mean of y using your "own" function
+
+sum(y)/length(y)
+
 # now do the same thing, but faster using the built-in R function
 
-# (3) find sum of demeaned values
+mean(y)
+
+# (3) find sum of demeaned values --> will always equal 0
+
+y - mean(y)
+   
 
 # (4) calculate sum of squared error
+
+sum((y - mean(y))^2)
+
+# standard deviation 
+
+
+sum((y - mean(y))^2) / (length(y)-1)
+
 
 ###########
 # Quantiles
@@ -34,9 +52,14 @@ quantilesVec <- c(55, 84, 65, 54, 61, 67, 80, 59, 81, 82)
 
 # (1) calculate median 
 
+median(quantilesVec)
+
 # (2) calculate quantiles
+
+quantile()
 
 # (3) make a histogram of state median income
 state.x77[,2]
 
 # remember to save your plot as a pdf
+
