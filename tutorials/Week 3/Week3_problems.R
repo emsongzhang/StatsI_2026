@@ -54,16 +54,28 @@ summary(df)
 # Find the mean, variance, standard deviation and standard error of income
 # Your answer here:
 # Mean
+
+mean_income <- mean(df$income)
+
 # Variance
+
+var_income <- var(df$income)
+
 # Standard deviation
+
+sd_income <- income_variance^(1/2)
+
 # Standard error
 
+se_income <- sd_income/sqrt(length(df$income))
 
 # -------------------------------#
 # 3. Visualizing the Distribution
 # -------------------------------#
 
 # Create a histogram of income
+
+
 
 # Create a density plot of income
 
@@ -74,6 +86,7 @@ summary(df)
 # based on the sample data, specifically the sample mean and SE?
 
 # Why do we need the standard error?
+# to calculate uncertainty
 
 # -------------------------------#
 # 5. Confidence Intervals
@@ -82,6 +95,10 @@ summary(df)
 # where margin of error is a multiple of the standard error
 
 # Calculate the lower and upper CI
+
+lower_95_n <- mean_income - qnorm(0.975) * se_income
+upper_95_n <- mean_income + qnorm(0.975) * se_income
+
 
 # Let's talk about qnorm()
 ?qnorm
@@ -101,6 +118,10 @@ t_score <- qt(0.995, df = length(df$income) - 1)
 
 # Re-calculate 99% CI around mean_income
 
+lower_99_t <- mean_income - t_score * se_income
+upper_99_t <- mean_income + t_score * se_income
+
+
 # -------------------------------#
 # 6. Significance Tests
 # -------------------------------#
@@ -118,9 +139,17 @@ t_score <- qt(0.995, df = length(df$income) - 1)
 
 # Hypotheses: Should our test be one or two-sided? 
 
+# H0: mu = 3034
+# HA: mu != 3034
+
 # Conduct appropriate test (using built-in R function)
 
+t.test(df$income, mu = 3034, alternative = c("two.sided"))
+
 # What is our conclusion?
+
+# one-sided test
+t.test(df$income, mu = 3034, alternative = "less")
 
 
 # ---------------------------------------------#
@@ -129,6 +158,11 @@ t_score <- qt(0.995, df = length(df$income) - 1)
 #   incomes than those living elsewhere?
 #
 # Hypotheses: Should our test be one or two-sided? 
+
+# H0: mu1 = mu2
+# HA: mu1 != mu2
+
+
 
 # On average, do people earn more in the capital
 # compared to people who do not reside in the capital?
@@ -158,12 +192,14 @@ west <- data$fh_polity2[data$region == "Western Europe and North America"]
 east <- data$fh_polity2[data$region == "Eastern Europe"]
 
 # Quick descriptive statistics - careful for missing values! 
-mean_west <- # your answer here
-  mean_east <- # your answer here
-  n_west    <- # your answer here
-  n_east    <- # your answer here
-  sd_west   <- # your answer here
-  sd_east   <- # your answer here
+mean_west <- mean(west)
+  mean_east <- mean(east)
+  n_west    <- length(west)
+  n_east    <- length(east)
+  sd_west   <- sd(west)
+  sd_east   <- sd(east)
+  se_west <- sd_west/sqrt(n_west)
+  se_east <- sd_east/sqrt(n_east)
   
 mean_west; mean_east
 n_west; n_east
