@@ -1,0 +1,13 @@
+---
+title: "Let's Give Our Report A Title"
+author: "Your Name"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
