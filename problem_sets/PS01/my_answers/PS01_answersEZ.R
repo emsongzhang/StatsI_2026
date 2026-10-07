@@ -230,8 +230,6 @@ plot_3 <- ggplot(expenditure, aes(x = regions, y = Y, color = factor(regions))) 
     values = c("Mean" = 18)
   )
 
-plot_3
-
 ggsave("plot_3.pdf", plot = plot_3, width = 9, height = 7)
 
 # On average, the West region has the highest per capita expenditure on housing assistance, with a mean of $88.31 and $87.
@@ -255,9 +253,7 @@ plot_4 <- ggplot(expenditure, aes(x = X1, y = Y)) +
     y = "Per Capita Expenditure"
   ) 
 
-plot_4
-
-ggsave("plot_4.pdf", plot = plot_4, width = 7, height = 5)
+ggsave("plot_4.pdf", plot = plot_4, width = 9, height = 7)
 
 # The scatterplot shows the per capita personal income versus the per capita expenditure on shelters/housing assistance in the respective states.
 # We observe a moderate positive linear relationship between per capital income and per capita expenditure, also represented by the correlation coefficient of 0.532.
@@ -287,9 +283,7 @@ plot_5 <- ggplot(
     shape = "Region"
   )
 
-plot_5
-
-ggsave("plot_5.pdf", plot = plot_5, width = 7, height = 5)
+ggsave("plot_5.pdf", plot = plot_5, width = 9, height = 7)
 
 # calculating the correlations between per capital income and per capita expenditure for each region to illustrate that the correlation of r=0.532 of all the observations do not translate to each respective region
 # some regions have much stronger positive linear correlation between the two variables than other regions 
