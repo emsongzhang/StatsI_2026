@@ -137,7 +137,7 @@ labels <- c(
 
 # use scatterplots for each panel because it most accurately represents the correlation between two continuous variables, displaying the magnitude and direction with the line of best fit
 # scatterplots also efficiently visualise any outliers that may be skewing the data 
-pdf("plot_2.pdf")
+pdf("plot_2.pdf", width = 12, height = 8)
 
 par(mfrow = c(2, 3))
 
@@ -232,7 +232,7 @@ plot_3 <- ggplot(expenditure, aes(x = regions, y = Y, color = factor(regions))) 
 
 plot_3
 
-ggsave("plot_3.pdf", plot = plot_3, width = 7, height = 5)
+ggsave("plot_3.pdf", plot = plot_3, width = 9, height = 7)
 
 # On average, the West region has the highest per capita expenditure on housing assistance, with a mean of $88.31 and $87.
 # As shown on the boxplot, both the mean and the median surpass those of the other three regions.
@@ -291,8 +291,19 @@ plot_5
 
 ggsave("plot_5.pdf", plot = plot_5, width = 7, height = 5)
 
-# regions are partly clustered 
+# calculating the correlations between per capital income and per capita expenditure for each region to illustrate that the correlation of r=0.532 of all the observations do not translate to each respective region
+# some regions have much stronger positive linear correlation between the two variables than other regions 
+for (i in levels(regions)) {
+  region_correlation <- round(cor(expenditure$X1[regions == i], expenditure$Y[regions == i]), 3)
+  
+  print(paste(i, "correlation =", region_correlation))
+  cat("\n")
+}
 
-
-
+# We observe some clustering of observations based on the specific region. 
+# For example, in the South, individuals tend to have both lower income and lower expenditure. 
+# In contrast, individuals in the North East, North Central, and West exhibit higher levels of both income and expenditure. 
+# When the observations are separated by region, we observe less of a linear association between the data points in the North Central and West. 
+# This also demonstrated by the respective correlation coefficients of r=0.184 for North Central and r=0.305 for West. 
+# In contrast, the data points in the South have a moderate positive linear correlation at r=0.556 and the data points in the North East have a strong positive linear correlation at r=0.802.
 
