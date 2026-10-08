@@ -78,23 +78,13 @@
 	\section*{Question 1: Education}
 	
 	A school counselor was curious about the average of IQ of the students in her school and took a random sample of 25 students' IQ scores. The following is the data set:\\
-	\vspace{.5cm}
-
+	
+	\textit{IQ Scores:}
 	\lstinputlisting[language=R, firstline=42, lastline=42]{PS01_answersEZ.R}
 	
 	\textit{Number of Observations:}
 	\lstinputlisting[language=R, firstline=49, lastline=49]{PS01_answersEZ.R}
-	
-	\textit{Visualising the Data:}
-	\lstinputlisting[language=R, firstline=76, lastline=86]{PS01_answersEZ.R}
-	
-	\begin{figure}[h!]\centering
-		\caption{\footnotesize IQ Scores of Students}
-		\label{fig:plot_1}
-		\includegraphics[width=.75\textwidth]{plot_1.pdf}
-	\end{figure}
-	
-	
+
 	\vspace{1cm}
 	
 	\begin{enumerate}
@@ -102,13 +92,50 @@
 		
 		\noindent Using the same sample, conduct the appropriate hypothesis test with $\alpha=0.05$.
 		
-			\textit{Descriptive Statistics and Confidence Interval:}
-		\lstinputlisting[language=R, firstline=52, lastline=61]{PS01_answersEZ.R}
+			\textit{Descriptive Statistics:}
+		\lstinputlisting[language=R, firstline=52, lastline=54]{PS01_answersEZ.R}
+		
+		\textit{Critical Value:}
+		\lstinputlisting[language=R, firstline=57, lastline=57]{PS01_answersEZ.R}
+		
+		\textit{90\% Confidence Interval:}
+		\lstinputlisting[language=R, firstline=60, lastline=61]{PS01_answersEZ.R}
 		
 		\item Next, the school counselor was curious  whether  the average student IQ in her school is higher than the average IQ score (100) among all the schools in the country.\\ 
 		
-		\textit{Hypothesis Test Calculations:}
-		\lstinputlisting[language=R, firstline=95, lastline=103]{PS01_answersEZ.R}
+		\textit{1. Assumptions (Visualising the Data):}
+		\lstinputlisting[language=R, firstline=76, lastline=86]{PS01_answersEZ.R}
+		
+		\begin{figure}[h!]\centering
+			\caption{\footnotesize IQ Scores of Students}
+			\label{fig:plot_1}
+			\includegraphics[width=0.9\textwidth]{plot_1.pdf}
+		\end{figure}
+		
+		\textit{2. Null and Alternate Hypotheses:}
+		
+		\textit{Question:}
+		Is the average IQ score in the counselor's school higher than the average IQ score of 100 among all schools in the country?
+		
+		\vspace{0.5cm}
+		
+		\textit{Hypotheses:}
+		\[
+		\begin{aligned}
+			H_0 &: \mu = 100 &\qquad \text{(the average IQ score is 100)} \\
+			H_A &: \mu > 100 &\qquad \text{(the average IQ score is greater than 100)}
+		\end{aligned}
+		\]
+		
+		\textit{Critical Value:}
+		\lstinputlisting[language=R, firstline=95, lastline=95]{PS01_answersEZ.R}
+		\lstinputlisting[language=R, firstline=98, lastline=98]{PS01_answersEZ.R}
+		
+		\textit{Test Statistic:}
+		\lstinputlisting[language=R, firstline=100, lastline=100]{PS01_answersEZ.R}
+		
+		\textit{P-value:}
+		\lstinputlisting[language=R, firstline=103, lastline=103]{PS01_answersEZ.R}
 		
 		\textit{Check Using the Built-in \texttt{t.test()} Function:}
 		\lstinputlisting[language=R, firstline=112, lastline=112]{PS01_answersEZ.R}
@@ -136,7 +163,11 @@
 	\noindent Explore the \texttt{expenditure} data set and import data into \texttt{R}.
 	\vspace{.5cm}
 	
+	\textit{Import Data:}
 	\lstinputlisting[language=R, firstline=118, lastline=118]{PS01_answersEZ.R}
+	
+	\textit{Explore Data:}
+	\lstinputlisting[language=R, firstline=121, lastline=123]{PS01_answersEZ.R}
 	
 	\vspace{.5cm}
 	\begin{itemize}
@@ -144,35 +175,46 @@
 		\item
 		Please plot the relationships among \emph{Y}, \emph{X1}, \emph{X2}, and \emph{X3}? What are the correlations among them (you just need to describe the graph and the relationships among them)?
 		
-		\textit{Scatterplots and Correlations:}
-		\lstinputlisting[language=R, firstline=129, lastline=176]{PS01_answersEZ.R}
+		\textit{Define Variables:}
+		\lstinputlisting[language=R, firstline=129, lastline=129]{PS01_answersEZ.R}
+		
+		
+		\textit{Variable Labels:}
+		\lstinputlisting[language=R, firstline=131, lastline=136]{PS01_answersEZ.R}
+		
+		
+		\textit{Set Up Plot:}
+		\lstinputlisting[language=R, firstline=140, lastline=142]{PS01_answersEZ.R}
+		
+		
+		\textit{Pairwise Scatterplots and Correlations:}
+		\lstinputlisting[language=R, firstline=147, lastline=176]{PS01_answersEZ.R}
 		
 	\begin{figure}[h!]\centering
 		\caption{\footnotesize Pairwise Relationships and Correlations}
 		\label{fig:plot_2}
-		\includegraphics[width=.75\textwidth]{plot_2.pdf}
+		\includegraphics[width=\textwidth]{plot_2.pdf}
 	\end{figure}
 	
-		
-		
 		\vspace{.5cm}
 		\item
 		Please plot the relationship between \emph{Y} and \emph{Region}? On average, which region has the highest per capita expenditure on housing assistance?
 		
-		\textit{Region Labels:}
+		\textit{Define Regions:}
 		\lstinputlisting[language=R, firstline=194, lastline=198]{PS01_answersEZ.R}
 		
-		\textit{Comparison of Means and Medians:}
+		
+		\textit{Compare Regional Means and Medians:}
 		\lstinputlisting[language=R, firstline=202, lastline=209]{PS01_answersEZ.R}
 		
-		\textit{Housing Expenditure by Region:}
-		\lstinputlisting[language=R, firstline=213, lastline=233]{PS01_answersEZ.R}
 		
-		
+		\textit{Plot Housing Expenditure by Region:}
+		\lstinputlisting[language=R, firstline=214, lastline=235]{PS01_answersEZ.R}
+	
 		\begin{figure}[h!]\centering
 			\caption{\footnotesize Housing Expenditure by Region}
 			\label{fig:plot_3}
-			\includegraphics[width=.75\textwidth]{plot_3.pdf}
+			\includegraphics[width=\textwidth]{plot_3.pdf}
 		\end{figure}
 		
 		
@@ -181,25 +223,25 @@
 		Please plot the relationship between \emph{Y} and \emph{X1}? Describe this graph and the relationship. Reproduce the above graph including one more variable \emph{Region} and display different regions with different types of symbols and colors.
 		
 		\textit{Housing Expenditure and Income:}
-		\lstinputlisting[language=R, firstline=242, lastline=256]{PS01_answersEZ.R}
+		\lstinputlisting[language=R, firstline=244, lastline=259]{PS01_answersEZ.R}
 		
 		\begin{figure}[h!]\centering
 			\caption{\footnotesize Housing Expenditure versus Income}
 			\label{fig:plot_4}
-			\includegraphics[width=.75\textwidth]{plot_4.pdf}
+			\includegraphics[width=\textwidth]{plot_4.pdf}
 		\end{figure}
 		
 		\textit{Housing Expenditure and Income by Region:}
-		\lstinputlisting[language=R, firstline=268, lastline=286]{PS01_answersEZ.R}
+		\lstinputlisting[language=R, firstline=271, lastline=290]{PS01_answersEZ.R}
 				
 		\begin{figure}[h!]\centering
 			\caption{\footnotesize Housing Expenditure versus Income by Region}
 			\label{fig:plot_5}
-			\includegraphics[width=.75\textwidth]{plot_5.pdf}
+			\includegraphics[width=\textwidth]{plot_5.pdf}
 		\end{figure}
-			
+		
 		\textit{Correlations by Region:}
-		\lstinputlisting[language=R, firstline=290, lastline=294]{PS01_answersEZ.R}
+		\lstinputlisting[language=R, firstline=294, lastline=298]{PS01_answersEZ.R}
 		
 		
 	\end{itemize}

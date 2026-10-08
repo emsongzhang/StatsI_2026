@@ -137,9 +137,9 @@ labels <- c(
 
 # use scatterplots for each panel because it most accurately represents the correlation between two continuous variables, displaying the magnitude and direction with the line of best fit
 # scatterplots also efficiently visualise any outliers that may be skewing the data 
-pdf("plot_2.pdf", width = 12, height = 8)
+pdf("plot_2.pdf", width = 21, height = 12)
 
-par(mfrow = c(2, 3))
+par(mfrow = c(2, 3), cex = 1.8)
 
 # use for loop to create the same six graphs with its respective variables
 # abline creates a line of best fit
@@ -153,7 +153,7 @@ for (i in 1:(length(vars) - 1)) {
       xlab = labels[j],
       ylab = labels[i],
       main = paste(labels[i], "vs", labels[j]),
-      cex = 0.4
+      cex = 0.8
     )
     
     abline(
@@ -168,7 +168,7 @@ for (i in 1:(length(vars) - 1)) {
     
     mtext(
       paste("r =", round(r, 2)),
-
+      cex = 2
     )
   }
 }
@@ -210,13 +210,14 @@ for (i in levels(regions)) {
 
 # use boxplot to compare data distributions across multiple groups and spot outliers
 # scale_shape_manual() with the value 18 represents a diamond shape in R (this is to differentiate the mean and median line on the boxplot graph)
+# theme_gray function helps increase all label titles at once  
 plot_3 <- ggplot(expenditure, aes(x = regions, y = Y, color = factor(regions))) +
   geom_boxplot() +
   stat_summary(
     aes(shape = "Mean"),
     fun = mean,
     geom = "point",
-    size = 3,
+    size = 5,
     alpha = 0.45
   ) +
   labs(
@@ -228,16 +229,17 @@ plot_3 <- ggplot(expenditure, aes(x = regions, y = Y, color = factor(regions))) 
   ) +
   scale_shape_manual(
     values = c("Mean" = 18)
-  )
+  ) +
+  theme_gray(base_size = 26)
 
-ggsave("plot_3.pdf", plot = plot_3, width = 9, height = 7)
+ggsave("plot_3.pdf", plot = plot_3, width = 15, height = 8)
 
 # On average, the West region has the highest per capita expenditure on housing assistance, with a mean of $88.31 and $87.
 # As shown on the boxplot, both the mean and the median surpass those of the other three regions.
 
 # c. 
 
-# use scatterplot to most accurately represent the relationship between housing expenditure and income, since both are also continous variables
+# use scatterplot to most accurately represent the relationship between housing expenditure and income, since both are also continuous variables
 # the line of best fit represents the magnitude and direction of the correlation between the two variables
 plot_4 <- ggplot(expenditure, aes(x = X1, y = Y)) +
   geom_point() +
@@ -251,9 +253,10 @@ plot_4 <- ggplot(expenditure, aes(x = X1, y = Y)) +
     subtitle = paste("r =", round(cor(expenditure$X1, expenditure$Y), 3)),
     x = "Per Capita Income",
     y = "Per Capita Expenditure"
-  ) 
+  ) +
+  theme_gray(base_size = 26)
 
-ggsave("plot_4.pdf", plot = plot_4, width = 9, height = 7)
+ggsave("plot_4.pdf", plot = plot_4, width = 15, height = 8)
 
 # The scatterplot shows the per capita personal income versus the per capita expenditure on shelters/housing assistance in the respective states.
 # We observe a moderate positive linear relationship between per capital income and per capita expenditure, also represented by the correlation coefficient of 0.532.
@@ -274,16 +277,17 @@ plot_5 <- ggplot(
     shape = factor(regions)
   )
 ) +
-  geom_point() +
+  geom_point(size = 5) +
   labs(
     title = "The Relationship between Housing Expenditure and Income by Region",
     x = "Per Capita Income",
     y = "Per Capita Expenditure",
     color = "Region",
     shape = "Region"
-  )
+  ) +
+  theme_gray(base_size = 26)
 
-ggsave("plot_5.pdf", plot = plot_5, width = 9, height = 7)
+ggsave("plot_5.pdf", plot = plot_5, width = 15, height = 8)
 
 # calculating the correlations between per capital income and per capita expenditure for each region to illustrate that the correlation of r=0.532 of all the observations do not translate to each respective region
 # some regions have much stronger positive linear correlation between the two variables than other regions 
