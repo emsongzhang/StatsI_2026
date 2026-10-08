@@ -236,7 +236,7 @@ plot_3 <- ggplot(expenditure, aes(x = regions, y = Y, color = factor(regions))) 
 
 ggsave("plot_3.pdf", plot = plot_3, width = 15, height = 8)
 
-# On average, the West region has the highest per capita expenditure on housing assistance, with a mean of $88.31 and $87.
+# On average, the West region has the highest per capita expenditure on housing assistance, with a mean of $88.31 and median of $87.
 # As shown on the boxplot, both the mean and the median surpass those of the other three regions.
 
 # c. 
@@ -251,7 +251,7 @@ plot_4 <- ggplot(expenditure, aes(x = X1, y = Y)) +
     se = FALSE
   ) +
   labs(
-    title = "The Relationship between Housing Expenditure and Income by Region",
+    title = "The Relationship between Housing Expenditure and Income",
     subtitle = paste("r =", round(cor(expenditure$X1, expenditure$Y), 3)),
     x = "Per Capita Income",
     y = "Per Capita Expenditure"

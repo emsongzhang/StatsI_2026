@@ -67,7 +67,7 @@
 
 \title{Problem Set 1}
 \date{Due: October 8, 2026}
-\author{Applied Stats/Quant Methods 1}
+\author{Emily Zhang}
 
 \begin{document}
 	\maketitle
@@ -216,7 +216,7 @@
 	
 	Proceeding to the next three scatterplots in the second row, where we observe the correlations between the explanatory variables, the correlation coefficients of financially insecure with income and urbanisation both have weak positive linear correlations as seen from the r coefficient of 0.21 and 0.22 respectively. We also see this since in both graphs, the observations are widely around the fitted line. Lastly, Income and individuals who reside in urban areas have the strongest positive linear relationship as we observe from the correlation coefficient of 0.6.
 	
-	The real world corroborates the observations we see in each of these scatterplots. States with higher incomes and more urbanised populations may have greater fiscal capacity and greater demand for formal housing and homelessness services, which could help explain their positive relationships with per capita expenditure. By contrast, financial insecurity alone may not translate as directly into higher spending because state policy choices, funding priorities, and service systems can vary substantially across states.
+	The real world mirrors the observations we see in each of these scatterplots. States with higher incomes and more urbanised populations may have greater fiscal capacity and greater demand for formal housing and homelessness services, which could help explain their positive relationships with per capita expenditure. By contrast, financial insecurity alone may not translate as directly into higher spending because state policy choices, funding priorities, and service systems can vary substantially across states.
 	 
 	Several potential outliers can be identified within each panel, particularly unusually low or high expenditure observations that deviate from the fitted lines in scatterplots with strong or moderate positive linear correlations. For example, the expenditure plots include an unusually low expenditure near 42 and several observations above 120. In contrast, the weaker relationships, income vs. financially insecure and urban vs. financially insecure, show broader dispersion around the fitted line rather than clearly isolated outliers, suggesting that their weaker correlations reflect greater overall variability rather than a few unusual observations.
 	
@@ -246,9 +246,11 @@
 		\textbf{Analysis:}\\
 		Because the raw dataset provides the regions as numerical values, I began by labelling each respective number with its associated region name with a for loop. 
 		
-		Then, I proceeded with a boxplot because . However, it is important to note that 
+		Then, I proceeded with a boxplot because it best compares data distributions across multiple groups, while spottig outliers. The boxplot also displays the median, which is a better measure of central tendency in comparison to the mean if there are outliers present. However, observing the boxplots and calculations of per capita expenditure for each region, there seems to be a negligent difference between the mean and median, since there are not many outliers observed other than the three potential observations in the North Central region. This further validates the decision for using a boxplot to assist in determining which region has the highest per capita expenditure on housing assistance.
 		
+		Comparing the means and medians, the West region surpasses all the other three regions in per capita expenditure. Even the first quartile of expenditure in the West is higher than the medians of the North East and South and close to that of the North Central, further portraying that there is generally a higher level of per capita expenditure in the West.
 		
+		\hl{On average, the West region has the highest per capita expenditure on housing assistance, with a mean of \$88.31 and median of \$87.}
 		
 		\vspace{.5cm}
 		\item
@@ -263,6 +265,13 @@
 			\includegraphics[width=\textwidth]{plot_4.pdf}
 		\end{figure}
 		
+		\textbf{Analysis:}\\
+		To analyse the relationship between per capita housing expenditure and per capita income, a scatterplot would be the best representation since the two variables are continuous. The line of best fit would allow for us to observe the magnitude and direction of the association between the two variables. We observe a moderate positive linear relationship between per capital income and per capita expenditure, also represented by the correlation coefficient of 0.532. There are several outliers that stand out, since they noticeably deviate from the overall linear trend. For example, there is one observation around an income of 2,100 with expenditure near 42, and another around an income of 2,750 with expenditure near 73. There are also a few unusually high expenditure observations around incomes of 2,550 to 2,700, with expenditures above 120. However, because most points cluster near the line of best fit and there is a moderate positive relationship, these outliers would be unlikely to affect the overall correlation.
+		
+		\hl{Overall, per capita housing expenditure and per capita income have a moderately positive linear relationship. In general, higher per capita income is associated with higher per capita income.}
+		
+		\vspace{.5cm}
+				
 		\textit{Housing Expenditure and Income by Region:}
 		\lstinputlisting[language=R, firstline=273, lastline=292]{PS01_answersEZ.R}
 				
@@ -277,6 +286,8 @@
 		
 		\textbf{Analysis:}\\
 		
+		\hl{Overall, when grouped by region, the overall relationship between income and expenditure differs across the regions, with the South concentrated at lower income and expenditure levels and substantially stronger correlations in the North East and South than in the North Central and West}
+	
 	\end{itemize}
 	
 	
