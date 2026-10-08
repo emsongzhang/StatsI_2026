@@ -38,6 +38,11 @@
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 
+% highlighting tools to identify final answer
+\definecolor{pastelyellow}{RGB}{255, 250, 205}
+\usepackage{soul}
+\sethlcolor{pastelyellow}
+
 \lstdefinestyle{mystyle}{
 	backgroundcolor=\color{backcolour},   
 	commentstyle=\color{codegreen},
@@ -102,12 +107,15 @@
 		\lstinputlisting[language=R, firstline=60, lastline=61]{PS01_answersEZ.R}
 		
 		\textbf{Analysis:}\\
+		By definition of the confidence interval formula (confidence interval = sample statistic +/- critical value*standard of error), we need to identify our sample statistic, critical value, and margin of error. To calculate the sample statistic, we use the mean of all the observations to identify the trends of all the IQ scores on average. This also makes sense because the data is continous and relatively normally distributed as shown in the visualisation below. Then, for the critical value, a t-critical value would be more suitable than a z-critical value because the sample size of IQ Scores is less than 30 as we observe using the length function (n=25). To find the t-critical value, we can use the built-in qt() function in R. However, it is important to note that for a 90\% confidence interval, the appropriate probability parameter is 0.95 and not 0.90. This follows the idea that we are looking at both tails of the distribution, so when only observing one tail, the area of 0.10 decreases down to 0.05, which translates into a parameter of 0.95. Given that both the population mean and population standard deviation is unknown, we need to subtract one degree from the sample size to recieve the degree of freedoms in the second parameter. Then, we need to solve for the standard deviation and square this value to receive the standard error. With both the critical value and standard of error now, we can calculate the margin of error by multiplying the two values. Following the formula for the confidence interval by definition, we can use our information of the sample statistic (sample mean) and add the margin of error to receive the upper bound of the 90\% confidence interval. Then, we subtract the margin of error from the sample statistic to then receive the lower bound of the 90\% confidence interval.
+		
+		\colorbox{pastelyellow}{We result in the confidence interval of (93.9599, 102.9201).}
 		
 		
 		\item Next, the school counselor was curious  whether  the average student IQ in her school is higher than the average IQ score (100) among all the schools in the country.\\ 
 		
 		\textit{i. Assumptions (Visualising the Data):}
-		\lstinputlisting[language=R, firstline=76, lastline=86]{PS01_answersEZ.R}
+		\lstinputlisting[language=R, firstline=78, lastline=88]{PS01_answersEZ.R}
 		
 		\begin{figure}[H]\centering
 			\caption{\footnotesize IQ Scores of Students}
@@ -131,21 +139,27 @@
 		\]
 		
 		\textit{iv. Critical Value:}
-		\lstinputlisting[language=R, firstline=95, lastline=95]{PS01_answersEZ.R}
-		\lstinputlisting[language=R, firstline=98, lastline=98]{PS01_answersEZ.R}
-		
-		\textit{iv. Test Statistic:}
+		\lstinputlisting[language=R, firstline=97, lastline=97]{PS01_answersEZ.R}
 		\lstinputlisting[language=R, firstline=100, lastline=100]{PS01_answersEZ.R}
 		
+		\textit{iv. Test Statistic:}
+		\lstinputlisting[language=R, firstline=102, lastline=102]{PS01_answersEZ.R}
+		
 		\textit{iv. P-value:}
-		\lstinputlisting[language=R, firstline=103, lastline=103]{PS01_answersEZ.R}
+		\lstinputlisting[language=R, firstline=105, lastline=105]{PS01_answersEZ.R}
 		
 		\textit{Check Using the Built-in \texttt{t.test()} Function:}
-		\lstinputlisting[language=R, firstline=112, lastline=112]{PS01_answersEZ.R}
+		\lstinputlisting[language=R, firstline=114, lastline=114]{PS01_answersEZ.R}
 		
 		\textit{v. Conclusion:}\\
 		\textbf{Analysis:}\\
+		To figure out whether the average student IQ in the counselor's school is higher than the average IQ score among all schools in the country, we proceed with a one-tailed significance test. Following the 5 steps of hypothesis testing, we first identify whether the sample meets the assumption criterias. We know that IQ is a continous variable, measured on an interval scale (contains a true zero), and that the sample size is 25. Information given to us include that the sample is random. The visualisation of the sample distribution below also illustrates that the data relatively follows a normal distribution from its bell-shaped curve. This is important to emphasize because the sample size is less than 30, so we cannot use the central limit theorem and a large amont of sampling instances to determine normality. Lastly, we can assume that the IQ scores in the sample are independent of each other because they are drawn from a school population, where most students are not from the same family such that genetic similarities would cause dependency across observations. 
 		
+		After verifying that all the assumptions are met, we formulate the null and alternate hypothesis. The null hypothesis states that there is no difference between the IQ score within the counselor's school among all schools in the country, such that both on average is 100. In contrast, the alternate hypothesis states that the average IQ score is greater than that of students in all schools in the country. 
+		
+		There are two ways we can come to the right conclusion. The first method would be to calculate the t-critical value and t-statistic. Again, the t-test is used because the sample size is less than 30 and both the population mean and standard deviation are unknown. For the alpha threshold of 0.05, we enter 0.95 as the probability in the first parameter of the built-in qt() functino to calculate the t-critical value since we are only observing a one-tail test. If the t-statistic is significantly greater than the t-critical value, then the difference is highly unlikely to be a random occurrence, allowing us to reject the null hypothesis. However, given that the t-statistic value is -0.59574 and the t-critical value is 1.71088, the t-statistic value is significantly lower than the t-critical value. This indicates that any differences within the sample could occure from random chance, so we fail to reject the null hypothesis. The p-value corroborates this conclusion, but simply provides a second strategy to approach the significance test. The p-value we observe is 0.7215, which is signficantly greater than the alpha threshold of 0.05. Hence, this indicates that in a world where the null is true, it is unlikely that we observe a value more extreme than the observed value. With that in mind, we would reject the null hypothesis.
+		
+		\hl{We fail to reject the null hypothesis and can conclude that there is not sufficient evidence to say that the average student IQ in the counselor's school is higher than the average IQ score (100) among all the schools in the country.}
 		
 	\end{enumerate}
 	
@@ -171,10 +185,10 @@
 	\vspace{.5cm}
 	
 	\textit{Import Data:}
-	\lstinputlisting[language=R, firstline=118, lastline=118]{PS01_answersEZ.R}
+	\lstinputlisting[language=R, firstline=120, lastline=120]{PS01_answersEZ.R}
 	
 	\textit{Explore Data:}
-	\lstinputlisting[language=R, firstline=121, lastline=123]{PS01_answersEZ.R}
+	\lstinputlisting[language=R, firstline=123, lastline=125]{PS01_answersEZ.R}
 	
 	\vspace{.5cm}
 	\begin{itemize}
@@ -183,19 +197,19 @@
 		Please plot the relationships among \emph{Y}, \emph{X1}, \emph{X2}, and \emph{X3}? What are the correlations among them (you just need to describe the graph and the relationships among them)?
 		
 		\textit{Define Variables:}
-		\lstinputlisting[language=R, firstline=129, lastline=129]{PS01_answersEZ.R}
+		\lstinputlisting[language=R, firstline=131, lastline=131]{PS01_answersEZ.R}
 		
 		
 		\textit{Variable Labels:}
-		\lstinputlisting[language=R, firstline=131, lastline=136]{PS01_answersEZ.R}
+		\lstinputlisting[language=R, firstline=133, lastline=138]{PS01_answersEZ.R}
 		
 		
 		\textit{Set Up Plot:}
-		\lstinputlisting[language=R, firstline=140, lastline=142]{PS01_answersEZ.R}
+		\lstinputlisting[language=R, firstline=142, lastline=144]{PS01_answersEZ.R}
 		
 		
 		\textit{Pairwise Scatterplots and Correlations:}
-		\lstinputlisting[language=R, firstline=147, lastline=176]{PS01_answersEZ.R}
+		\lstinputlisting[language=R, firstline=149, lastline=178]{PS01_answersEZ.R}
 		
 	\begin{figure}[H]\centering
 		\caption{\footnotesize Pairwise Relationships and Correlations}
@@ -211,15 +225,15 @@
 		Please plot the relationship between \emph{Y} and \emph{Region}? On average, which region has the highest per capita expenditure on housing assistance?
 		
 		\textit{Define Regions:}
-		\lstinputlisting[language=R, firstline=194, lastline=198]{PS01_answersEZ.R}
+		\lstinputlisting[language=R, firstline=196, lastline=200]{PS01_answersEZ.R}
 		
 		
 		\textit{Compare Regional Means and Medians:}
-		\lstinputlisting[language=R, firstline=202, lastline=209]{PS01_answersEZ.R}
+		\lstinputlisting[language=R, firstline=204, lastline=211]{PS01_answersEZ.R}
 		
 		
 		\textit{Plot Housing Expenditure by Region:}
-		\lstinputlisting[language=R, firstline=214, lastline=235]{PS01_answersEZ.R}
+		\lstinputlisting[language=R, firstline=216, lastline=237]{PS01_answersEZ.R}
 	
 		\begin{figure}[H]\centering
 			\caption{\footnotesize Housing Expenditure by Region}
@@ -234,7 +248,7 @@
 		Please plot the relationship between \emph{Y} and \emph{X1}? Describe this graph and the relationship. Reproduce the above graph including one more variable \emph{Region} and display different regions with different types of symbols and colors.
 		
 		\textit{Housing Expenditure and Income:}
-		\lstinputlisting[language=R, firstline=244, lastline=259]{PS01_answersEZ.R}
+		\lstinputlisting[language=R, firstline=246, lastline=261]{PS01_answersEZ.R}
 		
 		\begin{figure}[H]\centering
 			\caption{\footnotesize Housing Expenditure versus Income}
@@ -243,7 +257,7 @@
 		\end{figure}
 		
 		\textit{Housing Expenditure and Income by Region:}
-		\lstinputlisting[language=R, firstline=271, lastline=290]{PS01_answersEZ.R}
+		\lstinputlisting[language=R, firstline=273, lastline=292]{PS01_answersEZ.R}
 				
 		\begin{figure}[H]\centering
 			\caption{\footnotesize Housing Expenditure versus Income by Region}
@@ -252,7 +266,7 @@
 		\end{figure}
 		
 		\textit{Correlations by Region:}
-		\lstinputlisting[language=R, firstline=294, lastline=298]{PS01_answersEZ.R}
+		\lstinputlisting[language=R, firstline=296, lastline=300]{PS01_answersEZ.R}
 		
 		\textbf{Analysis:}\\
 		

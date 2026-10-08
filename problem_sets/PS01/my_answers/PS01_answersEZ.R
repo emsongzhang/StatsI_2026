@@ -54,11 +54,11 @@ sd_y <- sqrt(sum((y - mean_y) ^ 2) / (n - 1))
 se_y <- sd_y/sqrt(n)
 
 # calculating the t-critical value: we use the t-distribution instead of the z-distribution because we observe that the length of y is less than 30 and the population mean and standard deviations are both unknown.
-t_score <- qt(0.95, df = n - 1)
+t_critical <- qt(0.95, df = n - 1)
 
-# calculating the lower and upper confidence bounds: confidence interval = sample statistic +/- margin of error 
-ci_90_lower= mean_y - t_score * se_y
-ci_90_upper = mean_y + t_score * se_y
+# calculating the lower and upper confidence bounds: confidence interval = sample statistic +/- critical value*standard of error (margin of error = critical value*standard of error)
+ci_90_lower= mean_y - t_critical * se_y
+ci_90_upper = mean_y + t_critical * se_y
 
 # b. 
 
@@ -68,9 +68,11 @@ ci_90_upper = mean_y + t_score * se_y
 # response: IQ scores (numeric)
 
 # i. assumptions: 
+# - given: random sample
 # - numeric, continuous data
 # - sample size = 25
-# normal distribution 
+# - normal distribution 
+# - independent samples
 
 # visualizing the distribution: we graph the observations to ensure for normality since the sample size is less than 30. We observe a relatively normal distribution, hence we can proceed with the significance test. 
 pdf("plot_1.pdf")

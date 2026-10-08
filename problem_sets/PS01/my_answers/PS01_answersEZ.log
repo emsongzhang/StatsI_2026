@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  8 OCT 2026 01:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  8 OCT 2026 04:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -816,46 +816,76 @@ Package: listings 2025/11/14 1.11b (Carsten Heinz)
     but found:
         2025/11/14 1.11b (Carsten Heinz)
     so I'm assuming it got fixed.
-\c@hyp=\count360
+(/usr/local/texlive/2026/texmf-dist/tex/generic/soul/soul.sty
+Package: soul 2026-03-06 v3.2 Permit use of UTF-8 characters in soul (HO)
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/soul/soul-ori.sty
+Package: soul-ori 2026-03-06 v3.2 letterspacing/underlining (mf)
+\SOUL@word=\toks54
+\SOUL@lasttoken=\toks55
+\SOUL@syllable=\toks56
+\SOUL@cmds=\toks57
+\SOUL@buffer=\toks58
+\SOUL@token=\toks59
+\SOUL@syllgoal=\dimen318
+\SOUL@syllwidth=\dimen319
+\SOUL@charkern=\dimen320
+\SOUL@hyphkern=\dimen321
+\SOUL@dimen=\dimen322
+\SOUL@dimeni=\dimen323
+\SOUL@minus=\count360
+\SOUL@comma=\count361
+\SOUL@apo=\count362
+\SOUL@grave=\count363
+\SOUL@spaceskip=\skip67
+\SOUL@ttwidth=\dimen324
+\SOUL@uldp=\dimen325
+\SOUL@ulht=\dimen326
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+))
+\c@hyp=\count364
+
 (/usr/local/texlive/2026/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count361
+\l__color_backend_stack_int=\count365
 )
 (./PS01_answersEZ.aux)
 \openout1 = `PS01_answersEZ.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
 
 (/usr/local/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count362
-\scratchdimen=\dimen318
+\scratchcounter=\count366
+\scratchdimen=\dimen327
 \scratchbox=\box78
-\nofMPsegments=\count363
-\nofMParguments=\count364
-\everyMPshowfont=\toks54
-\MPscratchCnt=\count365
-\MPscratchDim=\dimen319
-\MPnumerator=\count366
-\makeMPintoPDFobject=\count367
-\everyMPtoPDFconversion=\toks55
+\nofMPsegments=\count367
+\nofMParguments=\count368
+\everyMPshowfont=\toks60
+\MPscratchCnt=\count369
+\MPscratchDim=\dimen328
+\MPnumerator=\count370
+\makeMPintoPDFobject=\count371
+\everyMPtoPDFconversion=\toks61
 ) (/usr/local/texlive/2026/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -865,28 +895,28 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 67.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 72.
 
 
 (/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 67.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 72.
 
 
 (/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Package xypdf Info: Line width: 0.47998pt on input line 67.
-Package hyperref Info: Link coloring OFF on input line 67.
+Package xypdf Info: Line width: 0.47998pt on input line 72.
+Package hyperref Info: Link coloring OFF on input line 72.
 
 (./PS01_answersEZ.out) (./PS01_answersEZ.out)
 \@outlinefile=\write7
 \openout7 = `PS01_answersEZ.out'.
 
-\c@lstlisting=\count368
+\c@lstlisting=\count372
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--81
+Underfull \hbox (badness 10000) in paragraph at lines 85--86
 
  []
 
@@ -900,7 +930,7 @@ File: lstlang2.sty 2025/11/14 1.11b listings language file
 File: lstlang3.sty 2025/11/14 1.11b listings language file
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 83.
+nput line 88.
 
 (./PS01_answersEZ.R
 LaTeX Font Info:    Trying to load font information for OML+cmr on input line 4
@@ -913,7 +943,7 @@ LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 42.
 )
 (./PS01_answersEZ.R)
-Underfull \hbox (badness 10000) in paragraph at lines 91--92
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
 
  []
 
@@ -922,79 +952,70 @@ Underfull \hbox (badness 10000) in paragraph at lines 91--92
 {/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
 al/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]) (./PS01
 _answersEZ.R) (./PS01_answersEZ.R)
-Underfull \hbox (badness 10000) in paragraph at lines 104--105
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 107--108
-
- []
-
-(./PS01_answersEZ.R)
-<plot_1.pdf, id=28, 505.89pt x 505.89pt>
+(./PS01_answersEZ.R [2])
+<plot_1.pdf, id=48, 505.89pt x 505.89pt>
 File: plot_1.pdf Graphic file (type pdf)
 <use plot_1.pdf>
-Package pdftex.def Info: plot_1.pdf  used on input line 115.
+Package pdftex.def Info: plot_1.pdf  used on input line 123.
 (pdftex.def)             Requested size: 422.77664pt x 422.7833pt.
- [2] (./PS01_answersEZ.R) [3 <./plot_1.pdf>]
+ [3 <./plot_1.pdf>] (./PS01_answersEZ.R)
 (./PS01_answersEZ.R) (./PS01_answersEZ.R) (./PS01_answersEZ.R)
-(./PS01_answersEZ.R)
-Underfull \hbox (badness 10000) in paragraph at lines 146--148
-
- []
-
-[4] (./PS01_answersEZ.R) (./PS01_answersEZ.R) (./PS01_answersEZ.R)
-(./PS01_answersEZ.R) (./PS01_answersEZ.R) (./PS01_answersEZ.R
+(./PS01_answersEZ.R) [4] [5] (./PS01_answersEZ.R) (./PS01_answersEZ.R)
+(./PS01_answersEZ.R) (./PS01_answersEZ.R) (./PS01_answersEZ.R)
+(./PS01_answersEZ.R
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 1
-47.
+49.
 
 (/usr/local/texlive/2026/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2024/11/19 v2.5n Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 147.
- [5])
-<plot_2.pdf, id=106, 1517.67pt x 867.24pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 149.
+ [6])
+<plot_2.pdf, id=110, 1517.67pt x 867.24pt>
 File: plot_2.pdf Graphic file (type pdf)
 <use plot_2.pdf>
-Package pdftex.def Info: plot_2.pdf  used on input line 203.
+Package pdftex.def Info: plot_2.pdf  used on input line 217.
 (pdftex.def)             Requested size: 469.75502pt x 268.4314pt.
- [6]
-Underfull \hbox (badness 10000) in paragraph at lines 206--207
+ [7]
+Underfull \hbox (badness 10000) in paragraph at lines 220--221
 
  []
 
-(./PS01_answersEZ.R) (./PS01_answersEZ.R) (./PS01_answersEZ.R [7 <./plot_2.pdf>
+(./PS01_answersEZ.R) (./PS01_answersEZ.R) (./PS01_answersEZ.R [8 <./plot_2.pdf>
 ])
-<plot_3.pdf, id=171, 1084.05pt x 578.16pt>
+<plot_3.pdf, id=175, 1084.05pt x 578.16pt>
 File: plot_3.pdf Graphic file (type pdf)
 <use plot_3.pdf>
-Package pdftex.def Info: plot_3.pdf  used on input line 227.
+Package pdftex.def Info: plot_3.pdf  used on input line 241.
 (pdftex.def)             Requested size: 469.75502pt x 250.53596pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 230--231
+Underfull \hbox (badness 10000) in paragraph at lines 244--245
 
  []
 
-[8 <./plot_3.pdf>] (./PS01_answersEZ.R)
-<plot_4.pdf, id=209, 1084.05pt x 578.16pt>
+[9 <./plot_3.pdf>] (./PS01_answersEZ.R)
+<plot_4.pdf, id=213, 1084.05pt x 578.16pt>
 File: plot_4.pdf Graphic file (type pdf)
 <use plot_4.pdf>
-Package pdftex.def Info: plot_4.pdf  used on input line 242.
+Package pdftex.def Info: plot_4.pdf  used on input line 256.
 (pdftex.def)             Requested size: 469.75502pt x 250.53596pt.
- (./PS01_answersEZ.R [9 <./plot_4.pdf>])
-<plot_5.pdf, id=237, 1084.05pt x 578.16pt>
+ (./PS01_answersEZ.R [10 <./plot_4.pdf>])
+<plot_5.pdf, id=241, 1084.05pt x 578.16pt>
 File: plot_5.pdf Graphic file (type pdf)
 <use plot_5.pdf>
-Package pdftex.def Info: plot_5.pdf  used on input line 251.
+Package pdftex.def Info: plot_5.pdf  used on input line 265.
 (pdftex.def)             Requested size: 469.75502pt x 250.53596pt.
-(./PS01_answersEZ.R [10 <./plot_5.pdf>])
-Underfull \hbox (badness 10000) in paragraph at lines 257--258
+ (./PS01_answersEZ.R [11 <./plot_5.pdf>])
+Underfull \hbox (badness 10000) in paragraph at lines 271--272
 
  []
 
-[11] (./PS01_answersEZ.aux)
+[12] (./PS01_answersEZ.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -1003,13 +1024,13 @@ Package rerunfilecheck Info: File `PS01_answersEZ.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 27575 strings out of 467525
- 478813 string characters out of 5418982
- 1211378 words of memory out of 5000000
- 55776 multiletter control sequences out of 15000+600000
- 638982 words of font info for 87 fonts, out of 8000000 for 9000
+ 27840 strings out of 467525
+ 483088 string characters out of 5418982
+ 1216403 words of memory out of 5000000
+ 56028 multiletter control sequences out of 15000+600000
+ 639295 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,9n,104p,3246b,2154s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,9n,104p,3246b,2156s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb
 ></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
@@ -1025,10 +1046,10 @@ ive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texli
 ve/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texliv
 e/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/
 2026/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on PS01_answersEZ.pdf (11 pages, 239135 bytes).
+Output written on PS01_answersEZ.pdf (12 pages, 245870 bytes).
 PDF statistics:
- 384 PDF objects out of 1000 (max. 8388607)
- 327 compressed objects within 4 object streams
- 186 named destinations out of 1000 (max. 500000)
+ 389 PDF objects out of 1000 (max. 8388607)
+ 331 compressed objects within 4 object streams
+ 187 named destinations out of 1000 (max. 500000)
  38 words of extra memory for PDF output out of 10000 (max. 10000000)
 
