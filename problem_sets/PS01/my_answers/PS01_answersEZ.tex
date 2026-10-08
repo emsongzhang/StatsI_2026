@@ -89,8 +89,6 @@
 	
 	\textit{Number of Observations:}
 	\lstinputlisting[language=R, firstline=49, lastline=49]{PS01_answersEZ.R}
-
-	\vspace{1cm}
 	
 	\begin{enumerate}
 		\item Find a 90\% confidence interval for the average student IQ in the school (As a hint, you first need the mean and SD to create a CI):\\
@@ -107,7 +105,7 @@
 		\lstinputlisting[language=R, firstline=60, lastline=61]{PS01_answersEZ.R}
 		
 		\textbf{Analysis:}\\
-		By definition of the confidence interval formula (confidence interval = sample statistic +/- critical value*standard of error), we need to identify our sample statistic, critical value, and margin of error. To calculate the sample statistic, we use the mean of all the observations to identify the trends of all the IQ scores on average. This also makes sense because the data is continous and relatively normally distributed as shown in the visualisation below. Then, for the critical value, a t-critical value would be more suitable than a z-critical value because the sample size of IQ Scores is less than 30 as we observe using the length function (n=25). To find the t-critical value, we can use the built-in qt() function in R. However, it is important to note that for a 90\% confidence interval, the appropriate probability parameter is 0.95 and not 0.90. This follows the idea that we are looking at both tails of the distribution, so when only observing one tail, the area of 0.10 decreases down to 0.05, which translates into a parameter of 0.95. Given that both the population mean and population standard deviation is unknown, we need to subtract one degree from the sample size to recieve the degree of freedoms in the second parameter. Then, we need to solve for the standard deviation and square this value to receive the standard error. With both the critical value and standard of error now, we can calculate the margin of error by multiplying the two values. Following the formula for the confidence interval by definition, we can use our information of the sample statistic (sample mean) and add the margin of error to receive the upper bound of the 90\% confidence interval. Then, we subtract the margin of error from the sample statistic to then receive the lower bound of the 90\% confidence interval.
+		By definition of the confidence interval formula (confidence interval = sample statistic +/- critical value*standard of error), we need to identify our sample statistic, critical value, and margin of error. To calculate the sample statistic, we use the mean of all the observations to identify the trends of all the IQ scores on average. This also makes sense because the data is continous and relatively normally distributed as shown in the visualisation below. Then, for the critical value, a t-critical value would be more suitable than a z-critical value because the sample size of IQ Scores is less than 30 as we observe using the length function (n=25). To find the t-critical value, we can use the built-in qt() function in R, which we identify as 1.711. However, it is important to note that for a 90\% confidence interval, the appropriate probability parameter is 0.95 and not 0.90. This follows the idea that we are looking at both tails of the distribution, so when only observing one tail, the area of 0.10 decreases down to 0.05, which translates into a parameter of 0.95. Given that both the population mean and population standard deviation is unknown, we need to subtract one degree from the sample size to recieve the degree of freedoms in the second parameter. Then, we need to solve for the standard deviation and square this value to receive the standard error. With both the critical value and standard of error now, we can calculate the margin of error by multiplying the two values. Following the formula for the confidence interval by definition, we can use our information of the sample statistic (sample mean) and add the margin of error to receive the upper bound of the 90\% confidence interval. Then, we subtract the margin of error from the sample statistic to then receive the lower bound of the 90\% confidence interval.
 		
 		\colorbox{pastelyellow}{We result in the confidence interval of (93.9599, 102.9201).}
 		
@@ -168,9 +166,7 @@
 	\section*{Question 2: Political Economy}
 	
 	\noindent Researchers are curious about what affects the amount of money communities spend on addressing homelessness. The following variables constitute our data set about social welfare expenditures in the USA. \\
-	\vspace{.5cm}
-	
-	
+
 	\begin{tabular}{r|l}
 		\texttt{State} &\emph{50 states in US} \\
 		\texttt{Y} & \emph{per capita expenditure on shelters/housing assistance in state}\\
@@ -190,7 +186,6 @@
 	\textit{Explore Data:}
 	\lstinputlisting[language=R, firstline=123, lastline=125]{PS01_answersEZ.R}
 	
-	\vspace{.5cm}
 	\begin{itemize}
 		
 		\item
@@ -199,14 +194,11 @@
 		\textit{Define Variables:}
 		\lstinputlisting[language=R, firstline=131, lastline=131]{PS01_answersEZ.R}
 		
-		
 		\textit{Variable Labels:}
 		\lstinputlisting[language=R, firstline=133, lastline=138]{PS01_answersEZ.R}
 		
-		
 		\textit{Set Up Plot:}
 		\lstinputlisting[language=R, firstline=142, lastline=144]{PS01_answersEZ.R}
-		
 		
 		\textit{Pairwise Scatterplots and Correlations:}
 		\lstinputlisting[language=R, firstline=149, lastline=178]{PS01_answersEZ.R}
@@ -214,11 +206,21 @@
 	\begin{figure}[H]\centering
 		\caption{\footnotesize Pairwise Relationships and Correlations}
 		\label{fig:plot_2}
-		\includegraphics[width=\textwidth]{plot_2.pdf}
+		\includegraphics[width=0.82\textwidth]{plot_2.pdf}
 	\end{figure}
 	
 	\textbf{Analysis:}\\
+	To plot the pairwise scatterplots between each respective variable, I chose to use a nested for loop inside another for loop because the framework for each graph essentially stays the same, but the labels, data points, line of best fit, and correlations change amongst them. The outer loop selects each variable in turn, while the inner loop compares it with every variable that follows it. This produces all six unique pairwise comparisons without plotting a variable against itself or repeating the same relationship twice. A scatterplot deems the most representative graph in this case because for each panel because it most accurately represents the correlation between two continuous variables, displaying the magnitude and direction with the line of best fit. Scatterplots also efficiently visualise any outliers that may be skewing the data.
 	
+	The three scatterplots in the first row, comparing the explanatory variables (income, financially insecure, and urbanisation) each respectively against the response variable (expenditure) all have a Pearson correlation coefficient r that range from 0.45 to 0.53. This indicates that expenditure has a positive moderate linear relationship with income, "financially insecure" residents, and individuals who reside in urban areas. In other words, in general, higher per capita income, levels of financial insecurity, and urban population are each associated with higher per capita housing expenditure. 
+	
+	Proceeding to the next three scatterplots in the second row, where we observe the correlations between the explanatory variables, the correlation coefficients of financially insecure with income and urbanisation both have weak positive linear correlations as seen from the r coefficient of 0.21 and 0.22 respectively. We also see this since in both graphs, the observations are widely around the fitted line. Lastly, Income and individuals who reside in urban areas have the strongest positive linear relationship as we observe from the correlation coefficient of 0.6.
+	
+	The real world corroborates the observations we see in each of these scatterplots. States with higher incomes and more urbanised populations may have greater fiscal capacity and greater demand for formal housing and homelessness services, which could help explain their positive relationships with per capita expenditure. By contrast, financial insecurity alone may not translate as directly into higher spending because state policy choices, funding priorities, and service systems can vary substantially across states.
+	 
+	Several potential outliers can be identified within each panel, particularly unusually low or high expenditure observations that deviate from the fitted lines in scatterplots with strong or moderate positive linear correlations. For example, the expenditure plots include an unusually low expenditure near 42 and several observations above 120. In contrast, the weaker relationships, income vs. financially insecure and urban vs. financially insecure, show broader dispersion around the fitted line rather than clearly isolated outliers, suggesting that their weaker correlations reflect greater overall variability rather than a few unusual observations.
+	
+	\hl{Overall, housing expenditure is moderately strong and positively associated with income, financial insecurity, and urbanisation, while income and urbanisation show the strongest positive linear relationship and financial insecurity has only weak positive linear relationships with income and urbanisation.}
 	
 		\vspace{.5cm}
 		\item
@@ -242,6 +244,11 @@
 		\end{figure}
 		
 		\textbf{Analysis:}\\
+		Because the raw dataset provides the regions as numerical values, I began by labelling each respective number with its associated region name with a for loop. 
+		
+		Then, I proceeded with a boxplot because . However, it is important to note that 
+		
+		
 		
 		\vspace{.5cm}
 		\item
