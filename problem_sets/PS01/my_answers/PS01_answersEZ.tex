@@ -92,7 +92,7 @@
 		
 		\noindent Using the same sample, conduct the appropriate hypothesis test with $\alpha=0.05$.
 		
-			\textit{Descriptive Statistics:}
+		\textit{Descriptive Statistics:}
 		\lstinputlisting[language=R, firstline=52, lastline=54]{PS01_answersEZ.R}
 		
 		\textit{Critical Value:}
@@ -101,25 +101,28 @@
 		\textit{90\% Confidence Interval:}
 		\lstinputlisting[language=R, firstline=60, lastline=61]{PS01_answersEZ.R}
 		
+		\textbf{Analysis:}\\
+		
+		
 		\item Next, the school counselor was curious  whether  the average student IQ in her school is higher than the average IQ score (100) among all the schools in the country.\\ 
 		
-		\textit{1. Assumptions (Visualising the Data):}
+		\textit{i. Assumptions (Visualising the Data):}
 		\lstinputlisting[language=R, firstline=76, lastline=86]{PS01_answersEZ.R}
 		
-		\begin{figure}[h!]\centering
+		\begin{figure}[H]\centering
 			\caption{\footnotesize IQ Scores of Students}
 			\label{fig:plot_1}
 			\includegraphics[width=0.9\textwidth]{plot_1.pdf}
 		\end{figure}
 		
-		\textit{2. Null and Alternate Hypotheses:}
+		\textit{ii. Null and Alternate Hypotheses:}
 		
 		\textit{Question:}
 		Is the average IQ score in the counselor's school higher than the average IQ score of 100 among all schools in the country?
 		
 		\vspace{0.5cm}
 		
-		\textit{Hypotheses:}
+		\textit{iii. Hypotheses:}
 		\[
 		\begin{aligned}
 			H_0 &: \mu = 100 &\qquad \text{(the average IQ score is 100)} \\
@@ -127,18 +130,22 @@
 		\end{aligned}
 		\]
 		
-		\textit{Critical Value:}
+		\textit{iv. Critical Value:}
 		\lstinputlisting[language=R, firstline=95, lastline=95]{PS01_answersEZ.R}
 		\lstinputlisting[language=R, firstline=98, lastline=98]{PS01_answersEZ.R}
 		
-		\textit{Test Statistic:}
+		\textit{iv. Test Statistic:}
 		\lstinputlisting[language=R, firstline=100, lastline=100]{PS01_answersEZ.R}
 		
-		\textit{P-value:}
+		\textit{iv. P-value:}
 		\lstinputlisting[language=R, firstline=103, lastline=103]{PS01_answersEZ.R}
 		
 		\textit{Check Using the Built-in \texttt{t.test()} Function:}
 		\lstinputlisting[language=R, firstline=112, lastline=112]{PS01_answersEZ.R}
+		
+		\textit{v. Conclusion:}\\
+		\textbf{Analysis:}\\
+		
 		
 	\end{enumerate}
 	
@@ -190,11 +197,14 @@
 		\textit{Pairwise Scatterplots and Correlations:}
 		\lstinputlisting[language=R, firstline=147, lastline=176]{PS01_answersEZ.R}
 		
-	\begin{figure}[h!]\centering
+	\begin{figure}[H]\centering
 		\caption{\footnotesize Pairwise Relationships and Correlations}
 		\label{fig:plot_2}
 		\includegraphics[width=\textwidth]{plot_2.pdf}
 	\end{figure}
+	
+	\textbf{Analysis:}\\
+	
 	
 		\vspace{.5cm}
 		\item
@@ -211,12 +221,13 @@
 		\textit{Plot Housing Expenditure by Region:}
 		\lstinputlisting[language=R, firstline=214, lastline=235]{PS01_answersEZ.R}
 	
-		\begin{figure}[h!]\centering
+		\begin{figure}[H]\centering
 			\caption{\footnotesize Housing Expenditure by Region}
 			\label{fig:plot_3}
 			\includegraphics[width=\textwidth]{plot_3.pdf}
 		\end{figure}
 		
+		\textbf{Analysis:}\\
 		
 		\vspace{.5cm}
 		\item
@@ -225,7 +236,7 @@
 		\textit{Housing Expenditure and Income:}
 		\lstinputlisting[language=R, firstline=244, lastline=259]{PS01_answersEZ.R}
 		
-		\begin{figure}[h!]\centering
+		\begin{figure}[H]\centering
 			\caption{\footnotesize Housing Expenditure versus Income}
 			\label{fig:plot_4}
 			\includegraphics[width=\textwidth]{plot_4.pdf}
@@ -234,7 +245,7 @@
 		\textit{Housing Expenditure and Income by Region:}
 		\lstinputlisting[language=R, firstline=271, lastline=290]{PS01_answersEZ.R}
 				
-		\begin{figure}[h!]\centering
+		\begin{figure}[H]\centering
 			\caption{\footnotesize Housing Expenditure versus Income by Region}
 			\label{fig:plot_5}
 			\includegraphics[width=\textwidth]{plot_5.pdf}
@@ -243,6 +254,7 @@
 		\textit{Correlations by Region:}
 		\lstinputlisting[language=R, firstline=294, lastline=298]{PS01_answersEZ.R}
 		
+		\textbf{Analysis:}\\
 		
 	\end{itemize}
 	
