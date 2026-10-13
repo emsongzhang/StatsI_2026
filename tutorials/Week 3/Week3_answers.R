@@ -22,7 +22,7 @@ pkgTest <- function(pkg){
 lapply(c("readr", "ggplot2", "dplyr", "viridis", "foreign", "haven"),  pkgTest)
 
 # Set wd for current folder
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+setwd(dirname(rstudioapi::getActiveDocumentCon()$path))
 
 # Agenda
 # (1.) Load & inspect data

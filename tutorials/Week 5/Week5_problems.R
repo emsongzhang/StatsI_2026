@@ -40,13 +40,30 @@ View(df)
 
 # Create a scatter plot 
 
+ggplot() +
+  geom_point(mapping = aes(x = edu, y = income), data = df)
+
 # Calculate correlation
 
+correlation = cor(df$income, df$edu, method = "pearson")
+
 # Add correlation to scatter plot
+
+ggplot() +
+  geom_point(mapping = aes(x = edu, y = income), data = df) +
+  annotate(
+    "label",
+    x = Inf, y = Inf,
+    label = sprintf("Correlation = %.4f", correlation),
+    hjust = 1.1, vjust = 1.5
+  )
+
 
 # Improve visualization with detailed axis and main labels, save as PDF
 
 # Run a t-test for the correlation coefficient
+
+cor.test(df$edu, df$income)
 
 # Check p-value
 
@@ -70,9 +87,15 @@ View(df)
 
 # Conduct t-test for the slope of a regression line
 
+reg <- lm(income ~ edu, data = df)
+
+summary(reg)
+
 # Check p-value
 
 # Create a residual plot
+
+# IN EXPLANATION --> DO NOT SAY ... INCREASE. SAY "Y IS ASSOCIATED WITH AN INCREASE IN X"
 
 # Step 1: Assumptions
 # Step 2: Hypotheses
