@@ -98,6 +98,8 @@
 	\end{tabular}
 \end{table}
 
+\newpage
+
 	\textit{Set Up the Data Table (with Row and Column Totals):}
 	\lstinputlisting[language=R, firstline=39, lastline=58]{PS02_answersEZ.R}
 
@@ -185,7 +187,8 @@
 		\end{tabular}
 	\end{table}
 	
-	\textbf{Analysis:}\\
+	\textbf{Analysis:}\\ 
+	
 	The standardised residual of each cell is calculated with the formula
 	\[
 	\frac{f_o - f_e}{\sqrt{f_e\left(1-\frac{\text{row total}}{\text{grand total}}\right)\left(1-\frac{\text{column total}}{\text{grand total}}\right)}}.
@@ -197,7 +200,7 @@
 	
 	\item [(d)] How might the standardized residuals help you interpret the results?  
 	
-	textbf{Analysis:}\\
+	\textbf{Analysis:}\\
 	The standardised residuals measure the strength of the difference between the observed and expected frequencies within each cell. Because they are standardised, we can base our interpretation on the normal distribution. According to the empirical rule, approximately 95\% of the data should fall between -2 and +2 standard deviations of the mean, so any standardised residual outside of these bounds indicates a cell that departs notably from independence. 
 	
 	Using the cutoff of $|z| > 2$, no cell shows a significant departure from independence, which is consistent with the non-significant chi-square test in part (b). The cells with the highest standardised residuals are the ``Bribe requested'' and ``Stopped/given warning'' categories at $|1.642|$ and $|1.523|$ respectively, in comparison to the ``Not Stopped'' category at $|0.322|$. This pattern weakly suggests that upper class drivers were asked for bribes less often than expected, while upper class drivers were stopped and given a warning more often than expected. The opposite is true for lower class drivers. However, none of these deviations is large enough to conclude that social class and police extortion are dependent, and the small expected counts mean that this pattern should be interpreted cautiously.
@@ -221,11 +224,12 @@ Chattopadhyay and Duflo were interested in whether women promote different polic
 	\includegraphics[width=\textwidth]{women_desc.png}
 \end{figure}		
 
+\newpage
+
 \textit{Import and Explore Data:}
 \lstinputlisting[language=R, firstline=219, lastline=223]{PS02_answersEZ.R}
 
 \begin{enumerate}
-	\item [(a)] State a null and alternative (two-tailed) hypothesis. 
 	
 	\item [(a)] State a null and alternative (two-tailed) hypothesis. \\
 	
@@ -238,6 +242,8 @@ Chattopadhyay and Duflo were interested in whether women promote different polic
 	
 	\textbf{Analysis:}\\
 	The outcome variable is \texttt{water}, the number of new or repaired drinking water facilities in a village, and the explanatory variable is \texttt{reserved}, a binary variable indicating whether the GP was reserved for women leaders. Because the question asks for a two-tailed test, the alternative hypothesis does not specify a direction. The null hypothesis states that there is no linear relationship between the reservation policy and the number of new or repaired drinking water facilities in the villages, such that the slope coefficient $\beta_1$ is zero. In contrast, the alternative hypothesis states that there is a linear relationship, such that $\beta_1$ is not zero.
+	
+	\hl{The null hypothesis is that the reservation policy has no effect on the number of new or repaired drinking water facilities (the slope is zero), and the alternative is that it has an effect (the slope is not zero).}
 	
 	\vspace{.5cm}
 	
@@ -268,6 +274,8 @@ Chattopadhyay and Duflo were interested in whether women promote different polic
 	
 	\textbf{Analysis:}\\
 	Rather than relying only on the built-in function, I first calculated the regression by hand. The slope estimate is $\hat{\beta}_1 = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sum (x_i - \bar{x})^2}$, which I calculated with a for loop, and the intercept is $\hat{\beta}_0 = \bar{y} - \hat{\beta}_1 \bar{x}$. Then, I used the fitted values to calculate the sum of squared errors, which gives the residual standard error with $n-2$ degrees of freedom. Dividing this by $\sqrt{\sum (x_i - \bar{x})^2}$ gives the standard error of the slope, and dividing the slope by its standard error gives the t-statistic of 2.344. The two-tailed p-value is obtained with \texttt{pt()}, using the absolute value of the t-statistic and $n-2 = 320$ degrees of freedom, and multiplying it by two to account for both tails, which gives 0.0197. All of these values are identical to the output of the built-in \texttt{lm()} function.
+	
+	\hl{The regression gives a slope estimate of 9.252 for the reservation policy, with a t-statistic of 2.344 and a p-value of 0.0197.}
 	
 	
 	\vspace{.5cm}

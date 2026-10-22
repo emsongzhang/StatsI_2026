@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  22 OCT 2026 05:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  22 OCT 2026 13:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -914,7 +914,10 @@ Package hyperref Info: Link coloring OFF on input line 72.
 \openout7 = `PS02_answersEZ.out'.
 
 \c@lstlisting=\count372
+ [1
 
+{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
+al/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 (/usr/local/texlive/2026/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 )
@@ -925,7 +928,7 @@ File: lstlang2.sty 2025/11/14 1.11b listings language file
 File: lstlang3.sty 2025/11/14 1.11b listings language file
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 102.
+nput line 104.
 
 (./PS02_answersEZ.R
 LaTeX Font Info:    Trying to load font information for OML+cmr on input line 3
@@ -936,11 +939,8 @@ File: omlcmr.fd 2024/11/19 v2.5n Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 39.
- [1
-
-{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
-al/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}])
-Underfull \hbox (badness 10000) in paragraph at lines 107--108
+)
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
 
  []
 
@@ -955,28 +955,32 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 75.
  [2])
 (./PS02_answersEZ.R) (./PS02_answersEZ.R) [3]
-Underfull \hbox (badness 10000) in paragraph at lines 150--151
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
 
  []
 
-(./PS02_answersEZ.R) [4] (./PS02_answersEZ.R) (./PS02_answersEZ.R [5]) [6]
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 212--213
+(./PS02_answersEZ.R) [4] (./PS02_answersEZ.R) (./PS02_answersEZ.R [5])
+Underfull \hbox (badness 10000) in paragraph at lines 190--191
+
+ []
+
+[6] [7]
+Underfull \hbox (badness 10000) in paragraph at lines 215--216
 
  []
 
 <women_desc.png, id=195, 537.00626pt x 292.09125pt>
 File: women_desc.png Graphic file (type png)
 <use women_desc.png>
-Package pdftex.def Info: women_desc.png  used on input line 221.
+Package pdftex.def Info: women_desc.png  used on input line 224.
 (pdftex.def)             Requested size: 469.75502pt x 255.51234pt.
-(./PS02_answersEZ.R [8 <./women_desc.png>])
-Underfull \hbox (badness 10000) in paragraph at lines 230--231
+[8 <./women_desc.png>] (./PS02_answersEZ.R)
+Underfull \hbox (badness 10000) in paragraph at lines 234--235
 
  []
 
-(./PS02_answersEZ.R) [9] (./PS02_answersEZ.R) (./PS02_answersEZ.R)
-(./PS02_answersEZ.R) [10] [11] (./PS02_answersEZ.aux)
+(./PS02_answersEZ.R [9]) (./PS02_answersEZ.R) (./PS02_answersEZ.R) [10]
+(./PS02_answersEZ.R) [11] (./PS02_answersEZ.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -987,11 +991,11 @@ Package rerunfilecheck Info: File `PS02_answersEZ.out' has not changed.
 Here is how much of TeX's memory you used:
  27798 strings out of 467525
  482119 string characters out of 5418982
- 1312070 words of memory out of 5000000
+ 1309324 words of memory out of 5000000
  56000 multiletter control sequences out of 15000+600000
  640286 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,11n,104p,3246b,2751s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,11n,104p,3246b,2174s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.p
@@ -1013,7 +1017,7 @@ e/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
 6/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2026
 /texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2026/t
 exmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on PS02_answersEZ.pdf (11 pages, 413389 bytes).
+Output written on PS02_answersEZ.pdf (11 pages, 415978 bytes).
 PDF statistics:
  393 PDF objects out of 1000 (max. 8388607)
  332 compressed objects within 4 object streams
