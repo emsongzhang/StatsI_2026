@@ -125,7 +125,8 @@ chi_square <- chi_square(f_obs, f_exp)
 chi_square
 
 # checking output with R's built-in chi-square function: chisq.test()
-check_chi <- chisq.test(f_obs)
+check_chi <- chisq.test(f_obs[1:2, 1:3])
+check_chi
 
 # b)
 
@@ -165,6 +166,12 @@ alpha <- 0.1
 
 # comparing the alpha value with the p-value to come to a conclusion for the significance test
 max(p_val, alpha)
+
+if (p_val < alpha){
+  print("Reject H0")
+} else {
+  "Fail to reject H0"
+}
 
 # hypothesis test conclusion
 conclusion <- "We observe that the p-value is greater than the significance level of alpha at 0.1. 
@@ -298,6 +305,12 @@ summary(model)
 alpha <- 0.05
 max(p_value, alpha)
 
+if (p_value < alpha){
+  print("Reject H0")
+} else {
+  "Fail to reject H0"
+}
+
 # drawing conclusions about the significance test 
 conclusion <- "We observe that the p-value is less than the significance level of alpha at 0.05. 
               Hence, we do have sufficient evidence to rejct the null. We can say that there is a linear relationship between the reservation policy and the number of new/repaired drinking water facilities in the villages.
@@ -307,6 +320,9 @@ conclusion <- "We observe that the p-value is less than the significance level o
               We also observe from our linear regression model that the y-intercept also has a p-value almost at 0, which is less than the alpha level of 0.05.
               This indicates that the average number of water facilities in non-reserved villages is significantly different from 0.
               From a real-world standpoint, this is not necessarily abnormal because the non-reserved villages probably do get some new/repaired water facilities, 
-              so it would be unlikey to assume that the control group should average exactly zero facilities.
+              so it would be unlikey to assume that the control group should average exactly zero facilities."
 
+              
+              
+              
               
