@@ -195,6 +195,8 @@
 	\]
 	In other words, the observed minus the expected frequency is divided by an estimate of its standard error. Similar to the previous parts, I wrote a function for this formula and applied it to each cell with a nested for loop. Because the table only has two rows, the residuals of the upper class and lower class are equal in magnitude but opposite in sign.
 	
+\hl{For upper class drivers, the standardised residuals are 0.322 for not stopped, {$-1.642$} for bribe requested, and 1.523 for stopped/given warning, respectively, with the same magnitudes and opposite signs for lower class drivers, and none exceeds {$|2|$}.}
+	
 	\vspace{.5cm}
 	
 	
@@ -250,7 +252,7 @@ Chattopadhyay and Duflo were interested in whether women promote different polic
 	\item [(b)] Run a bivariate regression to test this hypothesis in \texttt{R} (include your code!).
 	
 	\textit{Slope Estimate:}
-	\lstinputlisting[language=R, firstline=242, lastline=273]{PS02_answersEZ.R}
+	\lstinputlisting[language=R, firstline=252, lastline=273]{PS02_answersEZ.R}
 	
 	\textit{Intercept, Standard Error, T-statistic, and P-value:}
 	\lstinputlisting[language=R, firstline=275, lastline=295]{PS02_answersEZ.R}

@@ -316,7 +316,7 @@ conclusion <- "We observe that the p-value is less than the significance level o
               Hence, we do have sufficient evidence to rejct the null. We can say that there is a linear relationship between the reservation policy and the number of new/repaired drinking water facilities in the villages.
               On average, GPs that are reserved to women have 9.252 more new/repaired drinking water facilities in the villages.
               However, it is important to note that the p-value we observe from the slope of 0.0197 is not statistically significant if the alpha threshold is changed to 0.01.
-              My assumption of a threshold level at 0.05, I am accepting a % risk of a false positive, that is rejecting a true null hypothesis.
+              My assumption of a threshold level at 0.05, I am accepting a 5% risk of a false positive, that is rejecting a true null hypothesis.
               We also observe from our linear regression model that the y-intercept also has a p-value almost at 0, which is less than the alpha level of 0.05.
               This indicates that the average number of water facilities in non-reserved villages is significantly different from 0.
               From a real-world standpoint, this is not necessarily abnormal because the non-reserved villages probably do get some new/repaired water facilities, 
