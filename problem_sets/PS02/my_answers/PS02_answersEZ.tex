@@ -101,7 +101,7 @@
 \newpage
 
 	\textit{Set Up the Data Table (with Row and Column Totals):}
-	\lstinputlisting[language=R, firstline=39, lastline=58]{PS02_answersEZ.R}
+	\lstinputlisting[language=R, firstline=39, lastline=61]{PS02_answersEZ.R}
 
 \begin{enumerate}
 	
@@ -118,13 +118,13 @@
 	\]
 	
 	\textit{Expected Frequencies:}
-	\lstinputlisting[language=R, firstline=75, lastline=97]{PS02_answersEZ.R}
+	\lstinputlisting[language=R, firstline=69, lastline=95]{PS02_answersEZ.R}
 	
 	\textit{Chi-Square Test Statistic:}
-	\lstinputlisting[language=R, firstline=105, lastline=125]{PS02_answersEZ.R}
+	\lstinputlisting[language=R, firstline=104, lastline=125]{PS02_answersEZ.R}
 	
 	\textit{Check Using the Built-in \texttt{chisq.test()} Function:}
-	\lstinputlisting[language=R, firstline=127, lastline=127]{PS02_answersEZ.R}
+	\lstinputlisting[language=R, firstline=127, lastline=128]{PS02_answersEZ.R}
 	
 	\textbf{Analysis:}\\
 	To calculate the $\chi^2$ test statistic, we first need the expected frequency of each cell under the null hypothesis of independence. Each expected frequency is calculated by multiplying the row total by the column total and dividing by the grand total of 42 observations. For example, the expected number of upper class drivers who were not stopped is $\frac{27 \times 21}{42} = 13.5$. I wrote a small function for this calculation and applied it to every cell using a nested for loop, which gives the expected frequencies in the table below.
@@ -152,10 +152,10 @@
 	Now calculate the p-value from the test statistic you just created (in \texttt{R}).\footnote{Remember frequency should be $>$ 5 for all cells, but let's calculate the p-value here anyway.}  What do you conclude if $\alpha = 0.1$?\\
 	
 	\textit{Checking the Assumption (Expected Frequencies $\geq 5$):}
-	\lstinputlisting[language=R, firstline=131, lastline=154]{PS02_answersEZ.R}
+	\lstinputlisting[language=R, firstline=132, lastline=156]{PS02_answersEZ.R}
 	
 	\textit{Degrees of Freedom and P-value:}
-	\lstinputlisting[language=R, firstline=156, lastline=160]{PS02_answersEZ.R}
+	\lstinputlisting[language=R, firstline=158, lastline=162]{PS02_answersEZ.R}
 	
 	\textbf{Analysis:}\\
 	Before calculating the p-value, I first checked the assumption that all expected frequencies are at least 5. Using a for loop, I counted the cells that violate this assumption. Two of the six cells, namely lower class drivers who were asked for a bribe (4.643) and lower class drivers who were stopped or given a warning (2.857), have expected frequencies below 5, so the assumption is not met. Hence, the result should be interpreted cautiously.
@@ -171,7 +171,7 @@
 	\item [(c)] Calculate the standardized residuals for each cell and put them in the table below.
 	
 	\textit{Standardised Residuals:}
-	\lstinputlisting[language=R, firstline=170, lastline=196]{PS02_answersEZ.R}
+	\lstinputlisting[language=R, firstline=176, lastline=205]{PS02_answersEZ.R}
 	
 	\begin{table}[H]
 		\centering
@@ -227,7 +227,7 @@ Chattopadhyay and Duflo were interested in whether women promote different polic
 \newpage
 
 \textit{Import and Explore Data:}
-\lstinputlisting[language=R, firstline=219, lastline=223]{PS02_answersEZ.R}
+\lstinputlisting[language=R, firstline=229, lastline=235]{PS02_answersEZ.R}
 
 \begin{enumerate}
 	
@@ -250,13 +250,13 @@ Chattopadhyay and Duflo were interested in whether women promote different polic
 	\item [(b)] Run a bivariate regression to test this hypothesis in \texttt{R} (include your code!).
 	
 	\textit{Slope Estimate:}
-	\lstinputlisting[language=R, firstline=232, lastline=250]{PS02_answersEZ.R}
+	\lstinputlisting[language=R, firstline=245, lastline=266]{PS02_answersEZ.R}
 	
 	\textit{Intercept, Standard Error, T-statistic, and P-value:}
-	\lstinputlisting[language=R, firstline=252, lastline=263]{PS02_answersEZ.R}
+	\lstinputlisting[language=R, firstline=268, lastline=288]{PS02_answersEZ.R}
 	
 	\textit{Check Using the Built-in \texttt{lm()} Function:}
-	\lstinputlisting[language=R, firstline=265, lastline=266]{PS02_answersEZ.R}
+	\lstinputlisting[language=R, firstline=290, lastline=292]{PS02_answersEZ.R}
 	
 	\begin{table}[H]
 		\centering
@@ -283,7 +283,7 @@ Chattopadhyay and Duflo were interested in whether women promote different polic
 	\item [(c)] Interpret the coefficient estimate for reservation policy. 
 	
 	\textit{Significance Level:}
-	\lstinputlisting[language=R, firstline=270, lastline=271]{PS02_answersEZ.R}
+	\lstinputlisting[language=R, firstline=296, lastline=299]{PS02_answersEZ.R}
 	
 	\textbf{Analysis:}\\
 	The coefficient estimate for the reservation policy is 9.252. Since \texttt{reserved} is a binary variable, the coefficient is the difference in the average number of new or repaired drinking water facilities between villages in reserved GPs and villages in non-reserved GPs. In other words, on average, villages in GPs that are reserved for women have approximately 9.25 more new or repaired drinking water facilities than villages in GPs that are not reserved. This is also supported by the group means, since the intercept of 14.738 is the average number of facilities in non-reserved villages, and the average in reserved villages is $14.738 + 9.252 = 23.991$.
