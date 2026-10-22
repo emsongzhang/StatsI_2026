@@ -49,7 +49,7 @@ political_science_tb[2, 1] <- 7
 political_science_tb[2, 2] <- 7
 political_science_tb[2, 3] <- 1
 
-# importing dplyr package to uses mutate() function to find the row and column totals
+# importing dplyr package to use mutate() function to find the row and column totals
 library(dplyr)
 
 political_science_tb <- political_science_tb %>%
@@ -75,7 +75,7 @@ chi_exp <- function(row_total, grand_total, col_total){
 # calculating the grand total of the table
 grand_total <- political_science_tb[nrow(political_science_tb), ncol(political_science_tb)]
 
-# creatig for loop to iterate through data table and apply the chi_exp() function from above
+# creating for loop to iterate through data table and apply the chi_exp() function from above
 exp_v <- c()
 
 for(i in 1:ncol(political_science_tb)){
@@ -120,7 +120,7 @@ chi_square <- function(f_obs, f_exp){
   return(chi_square)
   
 }
-# applying the chi_square() functino from above
+# applying the chi_square() function from above
 chi_square <- chi_square(f_obs, f_exp)
 chi_square
 
@@ -175,7 +175,7 @@ if (p_val < alpha){
 
 # hypothesis test conclusion
 conclusion <- "We observe that the p-value is greater than the significance level of alpha at 0.1. 
-              Hence, we do not have sufficient evidence to rejct the null, so we can say that social class and police extortion are statistically independent.
+              Hence, we do not have sufficient evidence to reject the null, so we can say that social class and police extortion are statistically independent.
               However, because two expected counts were below 5, the assumption was not met and the result should be interpreted cautiously."
 
 # c)
@@ -224,7 +224,7 @@ interpretation <- "The standardised residuals illustrate the measure of strength
                   They have the highest standardised residuals of |+/-1.642| and |+/-1.523|, respectively, in comparison to the standardised residual for the Non Stopped category at |+/-0.322|.
                   This pattern weakly suggests that upper-class respondents were asked for bribes less often than expected. 
                   Stopped/warned upper-class respondents were more often than expect. 
-                  However, it is important to note that none of these deviations is large enought to conclude that social class and police extortion are dependent.
+                  However, it is important to note that none of these deviations is large enough to conclude that social class and police extortion are dependent.
                   The small expected counts mean that this pattern should be interpreted cautiously."
     
 
@@ -320,7 +320,7 @@ conclusion <- "We observe that the p-value is less than the significance level o
               We also observe from our linear regression model that the y-intercept also has a p-value almost at 0, which is less than the alpha level of 0.05.
               This indicates that the average number of water facilities in non-reserved villages is significantly different from 0.
               From a real-world standpoint, this is not necessarily abnormal because the non-reserved villages probably do get some new/repaired water facilities, 
-              so it would be unlikey to assume that the control group should average exactly zero facilities."
+              so it would be unlikely to assume that the control group should average exactly zero facilities."
 
               
               
