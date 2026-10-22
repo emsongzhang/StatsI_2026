@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  22 OCT 2026 14:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  22 OCT 2026 15:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -959,17 +959,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 152--153
 
  []
 
-(./PS02_answersEZ.R [4]) (./PS02_answersEZ.R) (./PS02_answersEZ.R [5])
+(./PS02_answersEZ.R [4]) (./PS02_answersEZ.R) [5] (./PS02_answersEZ.R) [6]
 Underfull \hbox (badness 10000) in paragraph at lines 190--191
 
  []
 
-[6] [7]
+[7]
 Underfull \hbox (badness 10000) in paragraph at lines 215--216
 
  []
 
-<women_desc.png, id=208, 537.00626pt x 292.09125pt>
+<women_desc.png, id=220, 537.00626pt x 292.09125pt>
 File: women_desc.png Graphic file (type png)
 <use women_desc.png>
 Package pdftex.def Info: women_desc.png  used on input line 224.
@@ -979,7 +979,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 234--235
 
  []
 
-(./PS02_answersEZ.R [9]) (./PS02_answersEZ.R) (./PS02_answersEZ.R) [10]
+(./PS02_answersEZ.R [9]) (./PS02_answersEZ.R) (./PS02_answersEZ.R [10])
 (./PS02_answersEZ.R) [11] [12] (./PS02_answersEZ.aux)
  ***********
 LaTeX2e <2025-11-01>
@@ -989,13 +989,13 @@ Package rerunfilecheck Info: File `PS02_answersEZ.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 27829 strings out of 467525
- 482582 string characters out of 5418982
- 1348324 words of memory out of 5000000
- 56000 multiletter control sequences out of 15000+600000
+ 27859 strings out of 467525
+ 483012 string characters out of 5418982
+ 1371324 words of memory out of 5000000
+ 56002 multiletter control sequences out of 15000+600000
  640286 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,11n,104p,3246b,2176s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,11n,104p,3246b,2174s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.p
@@ -1017,10 +1017,10 @@ e/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
 6/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2026
 /texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2026/t
 exmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on PS02_answersEZ.pdf (12 pages, 422381 bytes).
+Output written on PS02_answersEZ.pdf (12 pages, 425075 bytes).
 PDF statistics:
- 436 PDF objects out of 1000 (max. 8388607)
- 374 compressed objects within 4 object streams
- 223 named destinations out of 1000 (max. 500000)
+ 469 PDF objects out of 1000 (max. 8388607)
+ 406 compressed objects within 5 object streams
+ 251 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 
