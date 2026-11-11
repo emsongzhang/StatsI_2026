@@ -136,9 +136,16 @@ equation5
 
 # c)
 
+# The coefficient for presvote is the same. 
 
+# simple linear regression: voteshare_residual = 0 + 0.257 * presvote_residual
+# multiregression: "voteshare = 0.449 + 0.036 * difflog + 0.257 * presvote"
 
+# In the multi linear regression, we can interpret the coefficient of 0.257 as: holding all else constant, a one-unit increase in the vote share 
+# of the presidential candidate will increase the difference between the incumbent and challenger's spending by $0.26. 
 
+# In the simple linear regression of the residuals, the 0.257 coefficient of voteshare_residual represents that for a one-unit increase in the variation not explained by presvote, 
+# the variation not explained by voteshare increases by 0.257. In other words, as the variation of 
 
 
 
