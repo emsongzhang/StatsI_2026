@@ -163,11 +163,7 @@ equation5 <- paste("voteshare =", intercept5, "+", slope5_difflog, "* difflog", 
 equation5
 
 # c)
-# side-by-side table: the presvote coefficient in model 5 equals the
-# residual coefficient in model 4
-output_stargazer("q5_comparison.tex", model4, model5,
-                 title = "Comparing Question 4 and Question 5",
-                 label = "tab:q5comp")
+
 
 
 
