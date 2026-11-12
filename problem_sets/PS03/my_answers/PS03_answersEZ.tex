@@ -84,11 +84,7 @@
 	
 \noindent In this problem set, you will run several regressions and create an add variable plot (see the lecture slides) in \texttt{R} using the \texttt{incumbents\_subset.csv} dataset. Include all of your code.
 
-	\vspace{.5cm}
-	
-	\lstinputlisting[language=R, firstline=34, lastline=36]{PS03_answersEZ.R}
-	\lstinputlisting[language=R, firstline=39, lastline=39]{PS03_answersEZ.R}
-	\lstinputlisting[language=R, firstline=41, lastline=44]{PS03_answersEZ.R}
+\vspace{0.5cm}
 	
 \section*{Question 1}
 \vspace{.25cm}
@@ -99,6 +95,8 @@
 		\lstinputlisting[language=R, firstline=49, lastline=53]{PS03_answersEZ.R}
 		\input{q1_regression.tex}
 		
+		\textbf{Analysis:}\\
+		
 		\item Make a scatterplot of the two variables and add the regression line. 
 		
 		\lstinputlisting[language=R, firstline=56, lastline=59]{PS03_answersEZ.R}
@@ -108,6 +106,8 @@
 			\includegraphics[width=.75\textwidth]{q1_plot.pdf}
 		\end{figure}
 		
+		\textbf{Analysis:}\\
+		
 		\item Save the residuals of the model in a separate object.
 		
 		\lstinputlisting[language=R, firstline=62, lastline=63]{PS03_answersEZ.R}
@@ -116,10 +116,14 @@
 			-0.268319 -0.053454 -0.003769  0.000000  0.047798  0.327488 
 		\end{verbatim}
 		
+		\textbf{Analysis:}\\
+		
 		\item Write the prediction equation.
 		
 		\lstinputlisting[language=R, firstline=66, lastline=70]{PS03_answersEZ.R}
 		\[ \widehat{\text{voteshare}} = 0.579 + 0.042 \times \text{difflog} \]
+		
+		\textbf{Analysis:}\\
 	\end{enumerate}
 	
 \newpage
@@ -132,6 +136,8 @@
 		\lstinputlisting[language=R, firstline=76, lastline=80]{PS03_answersEZ.R}
 		\input{q2_regression.tex}
 		
+		\textbf{Analysis:}\\
+		
 		\item Make a scatterplot of the two variables and add the regression line. 
 		
 		\lstinputlisting[language=R, firstline=83, lastline=86]{PS03_answersEZ.R}
@@ -141,6 +147,8 @@
 			\includegraphics[width=.75\textwidth]{q2_plot.pdf}
 		\end{figure}
 		
+		\textbf{Analysis:}\\
+		
 		\item Save the residuals of the model in a separate object.
 		
 		\lstinputlisting[language=R, firstline=89, lastline=90]{PS03_answersEZ.R}
@@ -149,10 +157,14 @@
 			-0.321965 -0.074069 -0.001018  0.000000  0.071507  0.427435 
 		\end{verbatim}
 		
+		\textbf{Analysis:}\\
+		
 		\item Write the prediction equation.
 		
 		\lstinputlisting[language=R, firstline=93, lastline=97]{PS03_answersEZ.R}
 		\[ \widehat{\text{presvote}} = 0.508 + 0.024 \times \text{difflog} \]
+		
+		\textbf{Analysis:}\\
 	\end{enumerate}
 	
 	\newpage	
@@ -165,6 +177,8 @@
 		\lstinputlisting[language=R, firstline=103, lastline=107]{PS03_answersEZ.R}
 		\input{q3_regression.tex}
 		
+		\textbf{Analysis:}\\
+		
 		\item Make a scatterplot of the two variables and add the regression line. 
 		
 		\lstinputlisting[language=R, firstline=110, lastline=113]{PS03_answersEZ.R}
@@ -174,10 +188,14 @@
 			\includegraphics[width=.75\textwidth]{q3_plot.pdf}
 		\end{figure}
 		
+		\textbf{Analysis:}\\
+		
 		\item Write the prediction equation.
 		
 		\lstinputlisting[language=R, firstline=116, lastline=120]{PS03_answersEZ.R}
 		\[ \widehat{\text{voteshare}} = 0.441 + 0.388 \times \text{presvote} \]
+		
+		\textbf{Analysis:}\\
 	\end{enumerate}
 	
 
@@ -190,6 +208,8 @@
 		\lstinputlisting[language=R, firstline=126, lastline=132]{PS03_answersEZ.R}
 		\input{q4_regression.tex}
 		
+		\textbf{Analysis:}\\
+		
 		\item Make a scatterplot of the two residuals and add the regression line. 	
 		
 		\lstinputlisting[language=R, firstline=135, lastline=138]{PS03_answersEZ.R}
@@ -199,10 +219,14 @@
 			\includegraphics[width=.75\textwidth]{q4_plot.pdf}
 		\end{figure}
 		
+		\textbf{Analysis:}\\
+		
 		\item Write the prediction equation.
 		
 		\lstinputlisting[language=R, firstline=141, lastline=145]{PS03_answersEZ.R}
 		\[ \widehat{\text{voteshare residual}} = 0 + 0.257 \times \text{presvote residual} \]
+		
+		\textbf{Analysis:}\\
 	\end{enumerate}
 	
 	\newpage	
@@ -215,13 +239,18 @@
 		\lstinputlisting[language=R, firstline=151, lastline=155]{PS03_answersEZ.R}
 		\input{q5_regression.tex}
 		
+		\textbf{Analysis:}\\
+		
 		\item Write the prediction equation.
 		
 		\lstinputlisting[language=R, firstline=158, lastline=163]{PS03_answersEZ.R}
 		\[ \widehat{\text{voteshare}} = 0.449 + 0.036 \times \text{difflog} + 0.257 \times \text{presvote} \]
 		
+		\textbf{Analysis:}\\
+		
 		\item What is it in this output that is identical to the output in Question 4? Why do you think this is the case?
-	
+		
+		\textbf{Analysis:}\\
 	\end{enumerate}
 
 
