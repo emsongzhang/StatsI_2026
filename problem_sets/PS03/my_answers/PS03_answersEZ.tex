@@ -96,6 +96,11 @@
 		\input{q1_regression.tex}
 		
 		\textbf{Analysis:}\\
+		To analyse how the difference in campaign spending affects the incumbent's vote share, I ran a simple linear regression using the lm() function, with \texttt{voteshare} as the outcome variable and \texttt{difflog} as the explanatory variable. A linear regression is appropriate here because both variables are continuous, and it allows us to estimate both the direction and the magnitude of the association. Since \texttt{difflog} is the difference between the logged spending of the incumbent and the challenger, a value of 0 means that both candidates spent the same amount, while positive values mean that the incumbent outspent the challenger.
+		
+		The intercept of 0.579 indicates that when the incumbent and challenger spend the same amount, the incumbent is predicted to receive about 57.9\% of the vote. The slope of 0.042 indicates that a one-unit increase in \texttt{difflog} (which corresponds to the incumbent spending roughly 2.7 times more relative to the challenger) is associated with, on average, about a 4.2 percentage point increase in the incumbent's vote share. Both coefficients are statistically significant at the 0.01 level, with very small standard errors (0.002 and 0.001) given the large sample size of 3,193 observations. The R$^2$ of 0.367 tells us that the difference in campaign spending explains about 36.7\% of the variation in the incumbent's vote share, which means that a large portion of the variation is still explained by other factors.
+		
+		\hl{There is a positive and statistically significant relationship between the difference in campaign spending and the incumbent's vote share. On average, a one-unit increase in difflog is associated with about a 4.2 percentage point increase in the incumbent's vote share.}
 		
 		\item Make a scatterplot of the two variables and add the regression line. 
 		
@@ -107,6 +112,9 @@
 		\end{figure}
 		
 		\textbf{Analysis:}\\
+		The scatterplot below best represents the relationship between two continuous variables, and the geom\_smooth() function with method = "lm" adds the fitted regression line from part (a). The scatterplot displays a clear positive linear trend, where incumbents who outspend their challengers tend to receive a higher share of the vote. Most observations are concentrated between a \texttt{difflog} of 0 and 4, meaning that in most races the incumbent outspends the challenger. However, there is still considerable dispersion around the fitted line, which is consistent with the R$^2$ of 0.367, and a few observations with very low or very high vote shares deviate noticeably from the overall trend.
+		
+		\hl{The scatterplot shows a moderate positive linear relationship between the difference in campaign spending and the incumbent's vote share.}
 		
 		\item Save the residuals of the model in a separate object.
 		
@@ -117,6 +125,9 @@
 		\end{verbatim}
 		
 		\textbf{Analysis:}\\
+		Using the residuals() function, I saved the residuals of the model in a separate object called \texttt{residuals1}. Each residual is the difference between the incumbent's actual vote share and the vote share predicted by campaign spending. In other words, the residuals capture the part of \texttt{voteshare} that is not explained by \texttt{difflog}. The mean of the residuals is exactly 0, which is expected by definition of the line of best fit, and the median (-0.004) is very close to 0, suggesting that the residuals are relatively symmetric. The residuals range from -0.268 to 0.327, meaning the model under- or over-predicts some incumbents' vote shares by as much as about 27 to 33 percentage points.
+		
+		\hl{The residuals are saved in the object residuals1, which represents the variation in the incumbent's vote share that is not explained by the difference in campaign spending.}
 		
 		\item Write the prediction equation.
 		
@@ -124,6 +135,9 @@
 		\[ \widehat{\text{voteshare}} = 0.579 + 0.042 \times \text{difflog} \]
 		
 		\textbf{Analysis:}\\
+		Using the coef() function, I extracted the intercept and slope from the model and rounded them to three decimal places to write the prediction equation. For example, if the incumbent and challenger spend the same amount (\texttt{difflog} = 0), the predicted vote share is 0.579, and if \texttt{difflog} = 2, the predicted vote share increases to about 0.663.
+		
+		\hl{The prediction equation is: predicted voteshare = 0.579 + 0.042 * difflog.}
 	\end{enumerate}
 	
 \newpage
@@ -137,6 +151,11 @@
 		\input{q2_regression.tex}
 		
 		\textbf{Analysis:}\\
+		Similar to Question 1, I used the lm() function to run a simple linear regression, this time with \texttt{presvote} as the outcome variable and \texttt{difflog} as the explanatory variable. This allows us to identify whether districts where the incumbent outspends the challenger are also districts where the presidential candidate of the incumbent's party performs better.
+		
+		The intercept of 0.508 indicates that when both candidates spend the same amount, the presidential candidate of the incumbent's party is predicted to receive about 50.8\% of the vote in the district. The slope of 0.024 indicates that a one-unit increase in \texttt{difflog} is associated with, on average, about a 2.4 percentage point increase in the presidential candidate's vote share. Although the slope is statistically significant at the 0.01 level, the R$^2$ of 0.088 is quite low, meaning that the difference in campaign spending only explains about 8.8\% of the variation in presidential vote share. This relationship should not be interpreted as campaign spending causing presidential popularity. Instead, it more likely reflects that districts that favour the incumbent's party tend to both support the party's presidential candidate and allow the incumbent to outspend the challenger. 
+		
+		\hl{There is a weak but statistically significant positive relationship between the difference in campaign spending and the presidential candidate's vote share. On average, a one-unit increase in difflog is associated with about a 2.4 percentage point increase in presvote.}
 		
 		\item Make a scatterplot of the two variables and add the regression line. 
 		
@@ -148,6 +167,9 @@
 		\end{figure}
 		
 		\textbf{Analysis:}\\
+		 Compared to the scatterplot in Question 1, the fitted line is much flatter and the observations are much more widely dispersed around it. This illustrates that while there is a slight positive trend, the difference in campaign spending is not a strong predictor of the presidential candidate's vote share, which is consistent with the low R$^2$ of 0.088.
+		
+		\hl{The scatterplot shows a weak positive linear relationship between the difference in campaign spending and the presidential candidate's vote share.}
 		
 		\item Save the residuals of the model in a separate object.
 		
@@ -158,6 +180,9 @@
 		\end{verbatim}
 		
 		\textbf{Analysis:}\\
+		I saved the residuals of this model in a separate object called \texttt{residuals2}. These residuals represent the part of the presidential candidate's vote share that is not explained by the difference in campaign spending. As expected, the mean is 0, and the median (-0.001) is very close to 0. The residuals range from -0.322 to 0.427, which is a wider spread than the residuals in Question 1, reflecting that this model explains much less of the variation in its outcome variable.
+		
+		\hl{The residuals are saved in the object residuals2, which represents the variation in presidential vote share that is not explained by the difference in campaign spending.}
 		
 		\item Write the prediction equation.
 		
@@ -165,6 +190,9 @@
 		\[ \widehat{\text{presvote}} = 0.508 + 0.024 \times \text{difflog} \]
 		
 		\textbf{Analysis:}\\
+		Using the coef() function, I extracted the intercept and slope from the model to write the prediction equation. For example, when \texttt{difflog} = 0, the predicted presidential vote share is 0.508, and when \texttt{difflog} = 2, it increases to about 0.556.
+		
+		\hl{The prediction equation is: predicted presvote = 0.508 + 0.024 * difflog.}
 	\end{enumerate}
 	
 	\newpage	
@@ -178,6 +206,11 @@
 		\input{q3_regression.tex}
 		
 		\textbf{Analysis:}\\
+		To identify how the presidential candidate's vote share is associated with the incumbent's electoral success, I ran a simple linear regression with \texttt{voteshare} as the outcome variable and \texttt{presvote} as the explanatory variable. Because both variables are proportions between 0 and 1, it is easiest to interpret the slope in terms of percentage points.
+		
+		The slope of 0.388 indicates that a 1 percentage point increase in the presidential candidate's vote share is associated with, on average, about a 0.39 percentage point increase in the incumbent's vote share. The slope is statistically significant at the 0.01 level, and the R$^2$ of 0.206 tells us that presidential vote share explains about 20.6\% of the variation in the incumbent's vote share. The intercept of 0.441 represents the predicted vote share when the presidential candidate receives 0\% of the vote, which is not meaningful in practice since no district in the data has a presidential vote share close to 0. However, it is important to note that this simple regression does not account for campaign spending, so part of this relationship may actually reflect the effect of spending.
+		
+		\hl{There is a moderate positive and statistically significant relationship between the presidential candidate's vote share and the incumbent's vote share. On average, a 1 percentage point increase in presvote is associated with about a 0.39 percentage point increase in the incumbent's vote share.}
 		
 		\item Make a scatterplot of the two variables and add the regression line. 
 		
@@ -189,6 +222,9 @@
 		\end{figure}
 		
 		\textbf{Analysis:}\\
+		The scatterplot with the fitted regression line shows a positive linear relationship, where incumbents tend to receive a higher vote share in districts where the presidential candidate of their party performs better. The observations are moderately dispersed around the fitted line, which is consistent with the R$^2$ of 0.206. There are also a few observations with unusually high incumbent vote shares that deviate from the overall trend.
+		
+		\hl{The scatterplot shows a moderate positive linear relationship between the presidential candidate's vote share and the incumbent's vote share.}
 		
 		\item Write the prediction equation.
 		
@@ -196,6 +232,9 @@
 		\[ \widehat{\text{voteshare}} = 0.441 + 0.388 \times \text{presvote} \]
 		
 		\textbf{Analysis:}\\
+		Using the coef() function, I extracted the intercept and slope from the model to write the prediction equation. For example, in a district where the presidential candidate of the incumbent's party receives 50\% of the vote (\texttt{presvote} = 0.5), the incumbent is predicted to receive about 63.5\% of the vote.
+		
+		\hl{The prediction equation is: predicted voteshare = 0.441 + 0.388 * presvote.}
 	\end{enumerate}
 	
 
@@ -209,6 +248,11 @@
 		\input{q4_regression.tex}
 		
 		\textbf{Analysis:}\\
+		To run this regression, I first combined the residuals from Question 1 and Question 2 into a single data frame, then used the lm() function with \texttt{residuals1} as the outcome variable and \texttt{residuals2} as the explanatory variable. The residuals from Question 1 represent how much better or worse the incumbent did than we would predict from campaign spending alone, while the residuals from Question 2 represent how much better or worse the presidential candidate of the incumbent's party did than we would predict from campaign spending alone. Since the effect of \texttt{difflog} has been removed from both variables, this regression tells us the relationship between the president's popularity and the incumbent's vote share after taking campaign spending into account.
+		
+		The slope of 0.257 indicates that for every 1 percentage point that the presidential candidate does better than campaign spending would predict, the incumbent, on average, does about 0.26 percentage points better than campaign spending would predict. The slope is statistically significant at the 0.01 level. The intercept is 0 because residuals always have a mean of 0, so the fitted line must pass through the origin. The R$^2$ of 0.130 tells us that, of the variation in the incumbent's vote share that campaign spending could not explain, presidential vote share explains about 13\%. It is also important to note that this slope (0.257) is smaller than the slope of 0.388 from Question 3, since part of the relationship in Question 3 was actually due to campaign spending.
+		
+		\hl{After removing the effect of campaign spending from both variables, there is still a positive and statistically significant relationship between presidential vote share and the incumbent's vote share, with a slope of 0.257.}
 		
 		\item Make a scatterplot of the two residuals and add the regression line. 	
 		
@@ -220,6 +264,9 @@
 		\end{figure}
 		
 		\textbf{Analysis:}\\
+		This scatterplot is an added-variable plot, which visualises the relationship between \texttt{voteshare} and \texttt{presvote} after the influence of \texttt{difflog} has been removed from both. As expected, the observations are centred around 0 on both axes, since residuals have a mean of 0. The fitted line has a positive slope, but it is flatter than the line in Question 3, illustrating that the relationship between the president's popularity and the incumbent's vote share becomes weaker once campaign spending is taken into account. The observations are also widely dispersed around the fitted line, which is consistent with the R$^2$ of 0.130.
+		
+		\hl{The added-variable plot shows a positive but weaker linear relationship between the presidential vote share residuals and the incumbent vote share residuals.}
 		
 		\item Write the prediction equation.
 		
@@ -227,6 +274,9 @@
 		\[ \widehat{\text{voteshare residual}} = 0 + 0.257 \times \text{presvote residual} \]
 		
 		\textbf{Analysis:}\\
+		Using the coef() function, I extracted the intercept and slope from the model to write the prediction equation. The intercept rounds to 0 because both sets of residuals have a mean of 0.
+		
+		\hl{The prediction equation is: predicted voteshare residual = 0 + 0.257 * presvote residual.}
 	\end{enumerate}
 	
 	\newpage	
@@ -240,6 +290,11 @@
 		\input{q5_regression.tex}
 		
 		\textbf{Analysis:}\\
+		To account for both the president's popularity and the difference in campaign spending at the same time, I ran a multiple linear regression using the lm() function, with \texttt{voteshare} as the outcome variable and both \texttt{difflog} and \texttt{presvote} as the explanatory variables. In a multiple regression, each coefficient is interpreted as the effect of that variable while holding the other variable constant.
+		
+		The coefficient of 0.036 on \texttt{difflog} indicates that, holding presidential vote share constant, a one-unit increase in \texttt{difflog} is associated with, on average, about a 3.6 percentage point increase in the incumbent's vote share. The coefficient of 0.257 on \texttt{presvote} indicates that, holding the difference in campaign spending constant, a 1 percentage point increase in the presidential candidate's vote share is associated with, on average, about a 0.26 percentage point increase in the incumbent's vote share. Both coefficients are statistically significant at the 0.01 level. Compared to the simple regressions, both coefficients decreased, with \texttt{difflog} decreasing from 0.042 to 0.036 and \texttt{presvote} decreasing from 0.388 to 0.257. This occurs because the two explanatory variables are positively correlated with each other, so in the simple regressions, each variable was partially picking up the effect of the other. The R$^2$ of 0.450 is also substantially higher than in either simple regression (0.367 and 0.206), meaning that together the two variables explain about 45\% of the variation in the incumbent's vote share.
+		
+		\hl{Both the difference in campaign spending and the presidential candidate's vote share have positive and statistically significant effects on the incumbent's vote share, even when holding the other variable constant. Together, they explain about 45\% of the variation in the incumbent's vote share.}
 		
 		\item Write the prediction equation.
 		
@@ -247,10 +302,20 @@
 		\[ \widehat{\text{voteshare}} = 0.449 + 0.036 \times \text{difflog} + 0.257 \times \text{presvote} \]
 		
 		\textbf{Analysis:}\\
+		Using the coef() function, I extracted the intercept and both slopes from the model to write the prediction equation. For example, in a district where \texttt{difflog} = 2 and the presidential candidate receives 50\% of the vote (\texttt{presvote} = 0.5), the incumbent is predicted to receive about 65\% of the vote.
+		
+		\hl{The prediction equation is: predicted voteshare = 0.449 + 0.036 * difflog + 0.257 * presvote.}
 		
 		\item What is it in this output that is identical to the output in Question 4? Why do you think this is the case?
 		
 		\textbf{Analysis:}\\
+		The coefficient on \texttt{presvote} in the multiple regression (0.257, with a standard error of 0.012) is identical to the slope of the residual regression in Question 4. The t-statistic of 21.84 is also the same in both models.
+		
+		Questions 4 and 5 take different strategies to reach the same conclusion. Both aim to answer whether the president's popularity helps the incumbent, once we also factor in campaign spending. However, the issue is that spending and presidential popularity are correlated with each other. Districts where the president's party is popular also tend to be districts where the incumbent outspends the challenger. Our goal is to determine the effect of presidential popularity on the incumbent's vote share without the effect of spending. The two questions simply follow different approaches. In Question 1, we first predict the incumbent's vote share from campaign spending. The residuals are what is left over that spending cannot explain. Then, in Question 2, we predict the president's popularity from campaign spending. The residuals here are the part of presidential popularity that has nothing to do with spending. When we compare those two leftovers (the respective residuals) in Question 4, we are analysing the effect of the president's popularity on the incumbent's vote share with spending removed from the equation. Hence, any remaining relationship between the two sets of residuals has to come from the president's popularity alone. Question 5 reaches the same answer in one step. By including both \texttt{difflog} and \texttt{presvote} in a single regression, the coefficient on \texttt{presvote} is estimated while holding spending constant, which is exactly what we did by hand in Question 4. 
+		
+		The coefficient is smaller than the 0.388 from Question 3 because, in Question 3, \texttt{presvote} was also picking up part of the effect of campaign spending, since districts where the president's party is popular also tend to be districts where the incumbent outspends the challenger. Once spending is controlled for, only the president's own effect remains.
+		
+		\hl{The coefficient on presvote (0.257) is identical in Questions 4 and 5 because both remove the effect of campaign spending from the relationship between presidential vote share and the incumbent's vote share. Holding spending constant, a 1 percentage point increase in presvote is associated with, on average, about a 0.26 percentage point increase in the incumbent's vote share.}
 	\end{enumerate}
 
 

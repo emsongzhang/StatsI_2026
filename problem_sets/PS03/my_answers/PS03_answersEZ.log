@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  12 NOV 2026 15:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  12 NOV 2026 17:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -940,116 +940,38 @@ LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
 (./q1_regression.tex) [1
 
 {/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
-al/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Underfull \hbox (badness 10000) in paragraph at lines 98--99
-
- []
-
-(./PS03_answersEZ.R)
-<q1_plot.pdf, id=28, 433.62pt x 289.08pt>
+al/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [2] (./P
+S03_answersEZ.R)
+<q1_plot.pdf, id=37, 433.62pt x 289.08pt>
 File: q1_plot.pdf Graphic file (type pdf)
 <use q1_plot.pdf>
-Package pdftex.def Info: q1_plot.pdf  used on input line 106.
+Package pdftex.def Info: q1_plot.pdf  used on input line 111.
 (pdftex.def)             Requested size: 352.31625pt x 234.89014pt.
- [2]
-Underfull \hbox (badness 10000) in paragraph at lines 109--110
-
- []
-
+ (./PS03_answersEZ.R) [3 <./q1_plot.pdf>] (./PS03_answersEZ.R) [4] (./PS03_answ
+ersEZ.R) (./q2_regression.tex) [5]
 (./PS03_answersEZ.R)
-Underfull \hbox (badness 10000) in paragraph at lines 119--120
-
- []
-
-(./PS03_answersEZ.R)
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
-
- []
-
-[3 <./q1_plot.pdf>] (./PS03_answersEZ.R) (./q2_regression.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 139--140
-
- []
-
-(./PS03_answersEZ.R)
-<q2_plot.pdf, id=66, 433.62pt x 289.08pt>
+<q2_plot.pdf, id=82, 433.62pt x 289.08pt>
 File: q2_plot.pdf Graphic file (type pdf)
 <use q2_plot.pdf>
-Package pdftex.def Info: q2_plot.pdf  used on input line 147.
+Package pdftex.def Info: q2_plot.pdf  used on input line 166.
 (pdftex.def)             Requested size: 352.31625pt x 234.89014pt.
- [4]
-Underfull \hbox (badness 10000) in paragraph at lines 150--151
-
- []
-
+ [6 <./q2_plot.pdf>] (./PS03_answersEZ.R)
+(./PS03_answersEZ.R) [7] (./PS03_answersEZ.R) (./q3_regression.tex) [8]
 (./PS03_answersEZ.R)
-Underfull \hbox (badness 10000) in paragraph at lines 160--161
-
- []
-
-(./PS03_answersEZ.R)
-Underfull \hbox (badness 10000) in paragraph at lines 167--168
-
- []
-
-[5 <./q2_plot.pdf>] (./PS03_answersEZ.R) (./q3_regression.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 180--181
-
- []
-
-(./PS03_answersEZ.R)
-<q3_plot.pdf, id=105, 433.62pt x 289.08pt>
+<q3_plot.pdf, id=126, 433.62pt x 289.08pt>
 File: q3_plot.pdf Graphic file (type pdf)
 <use q3_plot.pdf>
-Package pdftex.def Info: q3_plot.pdf  used on input line 188.
+Package pdftex.def Info: q3_plot.pdf  used on input line 221.
 (pdftex.def)             Requested size: 352.31625pt x 234.89014pt.
- [6]
-Underfull \hbox (badness 10000) in paragraph at lines 191--192
-
- []
-
-(./PS03_answersEZ.R)
-Underfull \hbox (badness 10000) in paragraph at lines 198--199
-
- []
-
-[7 <./q3_plot.pdf>] (./PS03_answersEZ.R) (./q4_regression.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 211--212
-
- []
-
-(./PS03_answersEZ.R)
-<q4_plot.pdf, id=142, 433.62pt x 289.08pt>
+ [9 <./q3_plot.pdf>] (./PS03_answersEZ.R) [10]
+(./PS03_answersEZ.R) (./q4_regression.tex) [11] (./PS03_answersEZ.R)
+<q4_plot.pdf, id=167, 433.62pt x 289.08pt>
 File: q4_plot.pdf Graphic file (type pdf)
 <use q4_plot.pdf>
-Package pdftex.def Info: q4_plot.pdf  used on input line 219.
+Package pdftex.def Info: q4_plot.pdf  used on input line 263.
 (pdftex.def)             Requested size: 352.31625pt x 234.89014pt.
- [8]
-Underfull \hbox (badness 10000) in paragraph at lines 222--223
-
- []
-
-(./PS03_answersEZ.R)
-Underfull \hbox (badness 10000) in paragraph at lines 229--230
-
- []
-
-[9 <./q4_plot.pdf>] (./PS03_answersEZ.R) (./q5_regression.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 242--243
-
- []
-
-(./PS03_answersEZ.R) [10]
-Underfull \hbox (badness 10000) in paragraph at lines 249--250
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 253--254
-
- []
-
-[11] (./PS03_answersEZ.aux)
+ [12 <./q4_plot.pdf>] (./PS03_answersEZ.R) [13] (./PS03_answersEZ.R) (./q5_regr
+ession.tex) [14] (./PS03_answersEZ.R) [15] [16] (./PS03_answersEZ.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -1058,9 +980,9 @@ Package rerunfilecheck Info: File `PS03_answersEZ.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 27750 strings out of 467525
- 481763 string characters out of 5418982
- 1174214 words of memory out of 5000000
+ 27755 strings out of 467525
+ 481798 string characters out of 5418982
+ 1151216 words of memory out of 5000000
  56006 multiletter control sequences out of 15000+600000
  639295 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1081,10 +1003,10 @@ e/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive
 /2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/tex
 live/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texli
 ve/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on PS03_answersEZ.pdf (11 pages, 915342 bytes).
+Output written on PS03_answersEZ.pdf (16 pages, 950606 bytes).
 PDF statistics:
- 299 PDF objects out of 1000 (max. 8388607)
- 243 compressed objects within 3 object streams
- 121 named destinations out of 1000 (max. 500000)
+ 320 PDF objects out of 1000 (max. 8388607)
+ 259 compressed objects within 3 object streams
+ 126 named destinations out of 1000 (max. 500000)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 
