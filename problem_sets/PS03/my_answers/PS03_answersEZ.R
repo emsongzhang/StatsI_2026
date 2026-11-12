@@ -32,7 +32,7 @@ library(ggplot2)
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 # importing stargazer package and loading library
-install.packages("stargazer")
+# install.packages("stargazer")
 library(stargazer)
 
 # read in data
@@ -194,11 +194,26 @@ equation5 <- paste("voteshare =", intercept5, "+", slope5_difflog, "* difflog", 
 equation5
 
 # c)
+# The coefficient on presvote in Question 5 is the same as the slope from Question 4 when the voteshare residuals are regressed on presvote residuals.
+# Both values are 0.257 and the t-statistic is the same of 21.84. The residual standard error is also essentially the same since both round to 0.734. 
 
-# What is it in this output that is identical to the output in Question 4? Why do you think this is the case?
+# Both Question 4 and Question 5 come to the same conclusion, which aim to answer whether the president's popularity help the incumbent, once you also factor in for campaign spending. 
+# However, the issue is that spending and presidential popularity are correlated with each other. Districts where the president's party is popular also tend to be districts
+# where the incumbent outspends the challenger. Our goal is to determine the effect of presidential popularity on the incumbent's vote share without the effect of spending. 
+# The two questions simply follow different approaches. In Question 1, we first predict the incumbent's vote share from campaign spending. 
+# The residuals are what is left over that spending cannot explain. Then, in Question 2, we predict the president's popularity from campaign spending.
+# The residuals here are the part of presidential popularity that has nothing to do with spending. When we compare those two leftovers (the respective residuals), 
+# we are analysing the effect of the president's popularity on the incumbent's vote share with spending removed from the equation. 
+# Hence, any remaining relationship between the two sets of residuals has to come from the president's popularity alone. 
+# On the other hand, Question 5 reaches the same answer in one step by putting both variables in one regression. When R reports the presvote coefficient holding difflog constant, 
+# it is doing the same thing as Question 4 behind the scenes. It removes spending's influence and looks at what is left. Hence, we get a slope of 0.257 in both cases. 
+# This coefficient is smaller than the 0.388 from Question 3 because, in Question 3, presvot was also pickking up part of the effect of campaign spending, 
+# since districts where the president's party is popular also tend to be districts where the incumbent outspends the challenger. Once spending is controlled for, 
+# only the president's own effect remains. 
 
+# In Question 4, for every 1 percentage point that the incumbent party's presidential candidate does better than campaign spending would predict, 
+# the incumbent on average does about 0.26 percentage points better than campaign spending would predict. 
 
-
-
-
+# In Question 5, holding the difference in campaign spending constant, a 1 percentage point increase in the presidential candidate's vote share is associated with, on average, 
+# about a 0.26 percentage point increase in the incumbent's vote share. 
 
