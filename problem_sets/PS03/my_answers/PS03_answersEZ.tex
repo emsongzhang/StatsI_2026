@@ -92,14 +92,14 @@
 	\begin{enumerate}
 		\item Run a regression where the outcome variable is \texttt{voteshare} and the explanatory variable is \texttt{difflog}.
 		
-		\lstinputlisting[language=R, firstline=49, lastline=53]{PS03_answersEZ.R}
+		\lstinputlisting[language=R, firstline=52, lastline=56]{PS03_answersEZ.R}
 		\input{q1_regression.tex}
 		
 		\textbf{Analysis:}\\
 		
 		\item Make a scatterplot of the two variables and add the regression line. 
 		
-		\lstinputlisting[language=R, firstline=56, lastline=59]{PS03_answersEZ.R}
+		\lstinputlisting[language=R, firstline=61, lastline=64]{PS03_answersEZ.R}
 		\begin{figure}[H]\centering
 			\caption{\footnotesize Incumbent vote share vs.\ difference in campaign spending (log).}
 			\label{fig:q1}
@@ -110,7 +110,7 @@
 		
 		\item Save the residuals of the model in a separate object.
 		
-		\lstinputlisting[language=R, firstline=62, lastline=63]{PS03_answersEZ.R}
+		\lstinputlisting[language=R, firstline=68, lastline=69]{PS03_answersEZ.R}
 		\begin{verbatim}
 			Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
 			-0.268319 -0.053454 -0.003769  0.000000  0.047798  0.327488 
@@ -120,7 +120,7 @@
 		
 		\item Write the prediction equation.
 		
-		\lstinputlisting[language=R, firstline=66, lastline=70]{PS03_answersEZ.R}
+		\lstinputlisting[language=R, linerange={73-74,77-78}]{PS03_answersEZ.R}
 		\[ \widehat{\text{voteshare}} = 0.579 + 0.042 \times \text{difflog} \]
 		
 		\textbf{Analysis:}\\
@@ -133,14 +133,14 @@
 	\begin{enumerate}
 		\item Run a regression where the outcome variable is \texttt{presvote} and the explanatory variable is \texttt{difflog}.
 		
-		\lstinputlisting[language=R, firstline=76, lastline=80]{PS03_answersEZ.R}
+		\lstinputlisting[language=R, firstline=86, lastline=90]{PS03_answersEZ.R}
 		\input{q2_regression.tex}
 		
 		\textbf{Analysis:}\\
 		
 		\item Make a scatterplot of the two variables and add the regression line. 
 		
-		\lstinputlisting[language=R, firstline=83, lastline=86]{PS03_answersEZ.R}
+		\lstinputlisting[language=R, firstline=95, lastline=98]{PS03_answersEZ.R}
 		\begin{figure}[H]\centering
 			\caption{\footnotesize Presidential vote share vs.\ difference in campaign spending (log).}
 			\label{fig:q2}
@@ -151,7 +151,7 @@
 		
 		\item Save the residuals of the model in a separate object.
 		
-		\lstinputlisting[language=R, firstline=89, lastline=90]{PS03_answersEZ.R}
+		\lstinputlisting[language=R, firstline=102, lastline=103]{PS03_answersEZ.R}
 		\begin{verbatim}
 			Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
 			-0.321965 -0.074069 -0.001018  0.000000  0.071507  0.427435 
@@ -161,7 +161,7 @@
 		
 		\item Write the prediction equation.
 		
-		\lstinputlisting[language=R, firstline=93, lastline=97]{PS03_answersEZ.R}
+		\lstinputlisting[language=R, linerange={107-108,111-112}]{PS03_answersEZ.R}
 		\[ \widehat{\text{presvote}} = 0.508 + 0.024 \times \text{difflog} \]
 		
 		\textbf{Analysis:}\\
@@ -174,14 +174,14 @@
 	\begin{enumerate}
 		\item Run a regression where the outcome variable is \texttt{voteshare} and the explanatory variable is \texttt{presvote}.
 		
-		\lstinputlisting[language=R, firstline=103, lastline=107]{PS03_answersEZ.R}
+		\lstinputlisting[language=R, firstline=119, lastline=123]{PS03_answersEZ.R}
 		\input{q3_regression.tex}
 		
 		\textbf{Analysis:}\\
 		
 		\item Make a scatterplot of the two variables and add the regression line. 
 		
-		\lstinputlisting[language=R, firstline=110, lastline=113]{PS03_answersEZ.R}
+		\lstinputlisting[language=R, firstline=128, lastline=131]{PS03_answersEZ.R}
 		\begin{figure}[H]\centering
 			\caption{\footnotesize Incumbent vote share vs.\ presidential vote share.}
 			\label{fig:q3}
@@ -192,7 +192,7 @@
 		
 		\item Write the prediction equation.
 		
-		\lstinputlisting[language=R, firstline=116, lastline=120]{PS03_answersEZ.R}
+		\lstinputlisting[language=R, linerange={135-136,139-140}]{PS03_answersEZ.R}
 		\[ \widehat{\text{voteshare}} = 0.441 + 0.388 \times \text{presvote} \]
 		
 		\textbf{Analysis:}\\
@@ -205,14 +205,14 @@
 	\begin{enumerate}
 		\item Run a regression where the outcome variable is the residuals from Question 1 and the explanatory variable is the residuals from Question 2.
 		
-		\lstinputlisting[language=R, firstline=126, lastline=132]{PS03_answersEZ.R}
+		\lstinputlisting[language=R, linerange={148-148,151-155}]{PS03_answersEZ.R}
 		\input{q4_regression.tex}
 		
 		\textbf{Analysis:}\\
 		
 		\item Make a scatterplot of the two residuals and add the regression line. 	
 		
-		\lstinputlisting[language=R, firstline=135, lastline=138]{PS03_answersEZ.R}
+		\lstinputlisting[language=R, firstline=160, lastline=163]{PS03_answersEZ.R}
 		\begin{figure}[H]\centering
 			\caption{\footnotesize Added-variable plot: residuals of \texttt{voteshare} vs.\ residuals of \texttt{presvote} (both on \texttt{difflog}).}
 			\label{fig:q4}
@@ -223,7 +223,7 @@
 		
 		\item Write the prediction equation.
 		
-		\lstinputlisting[language=R, firstline=141, lastline=145]{PS03_answersEZ.R}
+		\lstinputlisting[language=R, linerange={167-168,171-172}]{PS03_answersEZ.R}
 		\[ \widehat{\text{voteshare residual}} = 0 + 0.257 \times \text{presvote residual} \]
 		
 		\textbf{Analysis:}\\
@@ -236,14 +236,14 @@
 	\begin{enumerate}
 		\item Run a regression where the outcome variable is the incumbent's \texttt{voteshare} and the explanatory variables are \texttt{difflog} and \texttt{presvote}.	
 		
-		\lstinputlisting[language=R, firstline=151, lastline=155]{PS03_answersEZ.R}
+		\lstinputlisting[language=R, firstline=180, lastline=184]{PS03_answersEZ.R}
 		\input{q5_regression.tex}
 		
 		\textbf{Analysis:}\\
 		
 		\item Write the prediction equation.
 		
-		\lstinputlisting[language=R, firstline=158, lastline=163]{PS03_answersEZ.R}
+		\lstinputlisting[language=R, linerange={188-190,193-194}]{PS03_answersEZ.R}
 		\[ \widehat{\text{voteshare}} = 0.449 + 0.036 \times \text{difflog} + 0.257 \times \text{presvote} \]
 		
 		\textbf{Analysis:}\\

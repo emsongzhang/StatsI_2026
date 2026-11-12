@@ -40,7 +40,7 @@ inc.sub <- read.csv("https://raw.githubusercontent.com/ASDS-TCD/StatsI_2026/main
 
 # utilizing stargazer package and library to format output
 output_stargazer <- function(outputFile, ...) {
-  output <- capture.output(stargazer(...))
+  output <- capture.output(stargazer(..., table.placement = "H"))
   cat(paste(output, collapse = "\n"), "\n", file=outputFile, append=FALSE)
 }
 
@@ -131,11 +131,11 @@ plot3 <- ggplot(inc.sub, aes(x=presvote, y=voteshare)) +
 ggsave("q3_plot.pdf", plot3, width = 6, height = 4)
 
 # c)
-# using residuals function to calculate the residuals
+# using coef function to solve for intercept and slope value 
 intercept3 <- round(coef(model3)[1], 3)
 slope3 <- round(coef(model3)[2], 3)
 
-# using coef function to solve for intercept and slope value 
+# printing out the equation 
 equation3 <- paste("voteshare =", intercept3, "+", slope3, "* presvote")
 equation3
 
@@ -143,8 +143,8 @@ equation3
 # Question 4
 
 # a)
-# voteshare residual (residual 1): how much better or worse the incumbent did than you had predict form campaign spending alone
-# presvote residual (residual 2): how much better or worse the incumbent party's presidential candidate did in that district than you had predict from campaign spending along
+# voteshare residual (residual 1): how much better or worse the incumbent did than you had predict from campaign spending alone
+# presvote residual (residual 2): how much better or worse the incumbent party's presidential candidate did in that district than you had predict from campaign spending alone
 residuals <- data.frame(residuals1, residuals2)
 
 # voteshare residuals are regressed on presvote residuals
