@@ -77,8 +77,10 @@ prestige_prof_effect <- prof - unprof
 alpha = 0.05
 
 # testing precinct assigned lawn signs
-h0_assigned <- ""
-ha_assigned <- ""
+h0_assigned <- "There is no linear relationship between having yard signs in a precinct and the proportion of vote that went to McAuliff's opponent Ken Cuccinelli, 
+                after controlling for the effects of being next to precincts with these yard signs in the model."
+ha_assigned <- "There is a linear relationship between having yard signs in a precinct and the proportion of vote that went to McAuliff's opponent Ken Cuccinelli, 
+                after controlling for the effects of being next to precincts with these yard signs in the model."
 
 t_stat_assigned <- 0.042/0.016
 df_assigned <- 30-2-1
@@ -87,8 +89,10 @@ p_val_assigned <- 2*pt(abs(t_stat_assigned), df_assigned, lower.tail = F)
 # b) 
 
 # testing precinct adjacent to lawn signs
-h0_adjacent <- ""
-ha_adjacent <- ""
+h0_adjacent <- "There is no linear relationship between being next to precincts with yard signs and the proportion of vote that went to McAuliff's opponent Ken Cuccinelli, 
+                after controlling for the effects of having these yard signs in the precincts in the model."
+ha_adjacent <- "There is a linear relationship between being next to precincts with yard signs and the proportion of vote that went to McAuliff's opponent Ken Cuccinelli, 
+                after controlling for the effects of having these yard signs in the precincts in the model."
 
 t_stat_adjacent <- 0.042/0.013
 df_adjacent <- 76-2-1
@@ -96,4 +100,12 @@ p_val_adjacent <- 2*pt(abs(t_stat_adjacent), df, lower.tail = F)
 
 # c)
 
+constant <- 0.302
+constant_se <- 0.011
+
 # d)
+
+r_sq <- 0.094
+n <- 131
+
+
