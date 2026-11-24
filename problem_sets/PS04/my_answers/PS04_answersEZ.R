@@ -30,6 +30,12 @@ lapply(c("car"),  pkgTest)
 # set wd for current folder
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
+# utilizing stargazer package and library to format output
+output_stargazer <- function(outputFile, ...) {
+  output <- capture.output(stargazer(..., table.placement = "H"))
+  cat(paste(output, collapse = "\n"), "\n", file=outputFile, append=FALSE)
+}
+
 # Question 1
 
 # installing prestige dataset in the car library 
@@ -51,6 +57,11 @@ Prestige["professional"] <- ifelse(Prestige["type"] == "prof", 1, 0)
 # income, professional, and the interaction of the two are the predictors
 model <- lm(prestige ~ income + professional + income:professional, data = Prestige)
 summary(model)
+
+# displaying summary of model usin stargazer for formatting
+output_stargazer("q1_regression.tex", model,
+                 title = "Regression of prestige on income and profession",
+                 label = "tab:q1")
 
 # c) 
 
