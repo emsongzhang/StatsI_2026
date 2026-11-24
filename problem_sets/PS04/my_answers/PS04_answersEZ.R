@@ -31,6 +31,8 @@ lapply(c("car"),  pkgTest)
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 # utilizing stargazer package and library to format output
+library(stargazer)
+
 output_stargazer <- function(outputFile, ...) {
   output <- capture.output(stargazer(..., table.placement = "H"))
   cat(paste(output, collapse = "\n"), "\n", file=outputFile, append=FALSE)

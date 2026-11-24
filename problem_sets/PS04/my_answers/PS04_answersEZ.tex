@@ -103,26 +103,33 @@ help(Prestige)
 	\item [(a)]
 	Create a new variable \texttt{professional} by recoding the variable \texttt{type} so that professionals are coded as $1$, and blue and white collar workers are coded as $0$ (Hint: \texttt{ifelse}).
 	
-	\lstinputlisting[language=R, firstline=52, lastline=56]{PS04_answersEZ.R}
+	\lstinputlisting[language=R, firstline=54, lastline=54]{PS04_answersEZ.R}
 	
 	\textbf{Analysis:}\\
-	
-	\hl{}
+	Here, I created a new column called "professional". \hl{I use the ifelse function to encode the different categories within the type column.} If the type is prof", then it is encoded to 1. Any other type (bc or wc) will be encoded to 0. 
 	
 	\item [(b)]
 	Run a linear model with \texttt{prestige} as an outcome and \texttt{income}, \texttt{professional}, and the interaction of the two as predictors (Note: this is a continuous $\times$ dummy interaction.)
 	
-	\lstinputlisting[language=R, firstline=52, lastline=56]{PS04_answersEZ.R}
+	\lstinputlisting[language=R, firstline=60, lastline=61]{PS04_answersEZ.R}
+	\lstinputlisting[language=R, firstline=64, lastline=66]{PS04_answersEZ.R}
 	\input{q1_regression.tex}
 	
 	\textbf{Analysis:}\\
+	I use the lm function in R to run the multi-linear regression. From the regression table output, we observe that all the coefficients are significant at the alpha threshold of 0.01. This indicates that 
+	
+	The y-intercept has a value of 21.142 
+	
+	Standard error 
+	
+	Fit of the model   
 	
 	\hl{}
 	
 	\item [(c)]
 	Write the prediction equation based on the result.
 	
-	\lstinputlisting[language=R, firstline=52, lastline=56]{PS04_answersEZ.R}
+	\lstinputlisting[language=R, firstline=71, lastline=75]{PS04_answersEZ.R}
 	
 	\textbf{Analysis:}\\
 	
@@ -131,25 +138,23 @@ help(Prestige)
 	\item [(d)]
 	Interpret the coefficient for \texttt{income}.
 	
-	\lstinputlisting[language=R, firstline=52, lastline=56]{PS04_answersEZ.R}
-	
 	\textbf{Analysis:}\\
-	
-	\hl{}
+	Provided that professional = 0 (those who work blue or white collared jobs), a one unit increase in income is, on average, associated with 0.003 units increase in prestige. Provided that professional = 1 (those who work professional jobs), a one unit increase in income is, on average, associated with 0.001 units increase in prestige. The coefficient of the interaction term (income:profession) shows the difference in slope between the two lines from the equations above (0.001 - 0.003 = -0.002). The average effect on prestige of a one-unit increase income does depend on the type of profession.
+
+	hl{A real-world explanation of the model coefficients represent that prestige generally tends to be higher for individuals with a higher income; however, prestige increases at a much lower rate with the increase in income for individuals who work professional jobs rather than blue or white collared jobs.} Adding everything together, the positive association between prestige and income is dependent on the type of profession a given individual has, whether that be professional versus blue and white collared jobs.
 	
 	\item [(e)]
 	Interpret the coefficient for \texttt{professional}.
 	
-	\lstinputlisting[language=R, firstline=52, lastline=56]{PS04_answersEZ.R}
-	
 	\textbf{Analysis:}\\
 	
-	\hl{}
+	\hl{Holding income constant, on average, those who have professional jobs have 37.781 units of prestige more than those who work blue or white collared jobs.}
 	
 	\item [(f)]
 	What is the effect of a \$1,000 increase in income on prestige score for professional occupations? In other words, we are interested in the marginal effect of income when the variable \texttt{professional} takes the value of $1$. Calculate the change in $\hat{y}$ associated with a \$1,000 increase in income based on your answer for (c).
 	
-	\lstinputlisting[language=R, firstline=52, lastline=56]{PS04_answersEZ.R}
+	\lstinputlisting[language=R, firstline=102, lastline=103]{PS04_answersEZ.R}
+	\lstinputlisting[language=R, firstline=106, lastline=106]{PS04_answersEZ.R}
 	
 	\textbf{Analysis:}\\
 	
@@ -158,7 +163,8 @@ help(Prestige)
 	\item [(g)]
 	What is the effect of changing one's occupations from non-professional to professional when her income is \$6,000? We are interested in the marginal effect of professional jobs when the variable \texttt{income} takes the value of $6,000$. Calculate the change in $\hat{y}$ based on your answer for (c).
 	
-	\lstinputlisting[language=R, firstline=52, lastline=56]{PS04_answersEZ.R}
+	\lstinputlisting[language=R, firstline=112, lastline=113]{PS04_answersEZ.R}
+	\lstinputlisting[language=R, firstline=116, lastline=116]{PS04_answersEZ.R}
 	
 	\textbf{Analysis:}\\
 	
@@ -199,9 +205,19 @@ a precinct that was adjacent to a precinct in the treatment group (since people 
 \begin{enumerate}
 	\item [(a)] Use the results from a linear regression to determine whether having these yard signs in a precinct affects vote share (e.g., conduct a hypothesis test with $\alpha = .05$).
 	
-	\lstinputlisting[language=R, firstline=52, lastline=56]{PS04_answersEZ.R}
+	\lstinputlisting[language=R, firstline=122, lastline=122]{PS04_answersEZ.R}
+		
+	\textbf{Assumptions:}\\
 	
-	\textbf{Analysis:}\\
+	\textbf{Hypothesis:}\\
+	
+	\textbf{Test Statistic:}
+	\lstinputlisting[language=R, firstline=137, lastline=138]{PS04_answersEZ.R}
+	
+	\textbf{P-Value:}
+	\lstinputlisting[language=R, firstline=141, lastline=141]{PS04_answersEZ.R}
+	
+	\textbf{Conclusion:}\\
 	
 	\hl{}
 	
@@ -209,15 +225,23 @@ a precinct that was adjacent to a precinct in the treatment group (since people 
 	next to precincts with these yard signs affects vote
 	share (e.g., conduct a hypothesis test with $\alpha = .05$).
 	
-	\lstinputlisting[language=R, firstline=52, lastline=56]{PS04_answersEZ.R}
+	\textbf{Assumptions:}\\
 	
-	\textbf{Analysis:}\\
+	\textbf{Hypothesis:}\\
+	
+	\textbf{Test Statistic:}
+	\lstinputlisting[language=R, firstline=161, lastline=162]{PS04_answersEZ.R}
+	
+	\textbf{P-Value:}
+	\lstinputlisting[language=R, firstline=165, lastline=165]{PS04_answersEZ.R}
+	
+	\textbf{Conclusion:}\\
 	
 	\hl{}
 	
 	\item [(c)] Interpret the coefficient for the constant term substantively.
 	
-	\lstinputlisting[language=R, firstline=52, lastline=56]{PS04_answersEZ.R}
+	\lstinputlisting[language=R, firstline=173, lastline=174]{PS04_answersEZ.R}
 	
 	\textbf{Analysis:}\\
 	
@@ -225,7 +249,7 @@ a precinct that was adjacent to a precinct in the treatment group (since people 
 	
 	\item [(d)] Evaluate the model fit for this regression.  What does this	tell us about the importance of yard signs versus other factors that are not modeled?
 	
-	\lstinputlisting[language=R, firstline=52, lastline=56]{PS04_answersEZ.R}
+	\lstinputlisting[language=R, firstline=183, lastline=184]{PS04_answersEZ.R}
 	
 	\textbf{Analysis:}\\
 	
