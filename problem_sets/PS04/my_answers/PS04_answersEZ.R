@@ -61,8 +61,39 @@ equation <- paste("prestige =", intercept, "+", slope_income, "* income", "+", s
 
 # f)
 
+prestige_income_effect <- unname(intercept + slope_income*1000 + slope_professional*1 + slope_interaction*1000*1)
+
 # g) 
 
+prof <- unname(intercept + slope_income*6000 + slope_professional*1 + slope_interaction*6000*1)
+unprof <- unname(intercept + slope_income*6000 + slope_professional*0 + slope_interaction*6000*0)
 
+prestige_prof_effect <- prof - unprof
 
 # Question 2
+
+# a) 
+
+alpha = 0.05
+
+# testing precinct assigned lawn signs
+h0_assigned <- ""
+ha_assigned <- ""
+
+t_stat_assigned <- 0.042/0.016
+df_assigned <- 30-2-1
+p_val_assigned <- 2*pt(abs(t_stat_assigned), df_assigned, lower.tail = F)
+  
+# b) 
+
+# testing precinct adjacent to lawn signs
+h0_adjacent <- ""
+ha_adjacent <- ""
+
+t_stat_adjacent <- 0.042/0.013
+df_adjacent <- 76-2-1
+p_val_adjacent <- 2*pt(abs(t_stat_adjacent), df, lower.tail = F)
+
+# c)
+
+# d)
