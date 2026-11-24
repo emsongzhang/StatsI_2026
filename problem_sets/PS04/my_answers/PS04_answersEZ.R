@@ -40,15 +40,21 @@ help(Prestige)
 
 # a) 
 
+# creating new column called "professional" that encodes the column "type"
+# professionals are coded as 1
+# blue and white collar workers are coded as 0
 Prestige["professional"] <- ifelse(Prestige["type"] == "prof", 1, 0)
 
 # b) 
 
+# using lm function to run a linear model with prestige as an outcome
+# income, professional, and the interaction of the two are the predictors
 model <- lm(prestige ~ income + professional + income:professional, data = Prestige)
 summary(model)
 
 # c) 
 
+# defining intercept and each slope value to write out the prediction equation
 intercept <- coef(model)[1]
 slope_income <- coef(model)[2]
 slope_professional <- coef(model)[3]
@@ -60,6 +66,7 @@ equation <- paste("prestige =", intercept, "+", slope_income, "* income", "+", s
 # if professional = 0: prestige = 21.142 + 0.003 * income 
 # if professional = 1: prestige = 58.923 + 0.001*income, which is simplified from prestige = 21.142 + 0.003 * income + 37.781*1 + (-0.002)*income*1
 
+# interpreting the slope coefficient of income
 interpretation_income <- "Provided that professional = 0 (those who work blue or white collared jobs), a one unit increase in income is, on average, associated with 0.003 units increase in prestige.
                           Provided that professional = 1 (those who work professional jobs), a one unit increase in income is, on average, associated with 0.001 units increase in prestige.
                           The coefficient of the interaction term (income:profession) shows the difference in slope between the two lines from the equations above (0.001 - 0.003 = -0.002).
@@ -72,23 +79,28 @@ interpretation_income <- "Provided that professional = 0 (those who work blue or
 
 # prestige = 21.142 + 37.781* professional 
 
+# interpreting the slope coefficient of professional
 interpretation_professional <- "Holding income constant, on average, those who have professional jobs have 37.781 units of prestige more than those who work blue or white collared jobs."
 
 # f)
 
-# change in y 
-income0 <- unname(intercept + slope_income*0 + slope_professional*1 + slope_interaction*0*1)
-income1000 <- unname(intercept + slope_income*1000 + slope_professional*1 + slope_interaction*1000*1)
+# calculating the prestige when income is 0 and when income is 100
+# this is to determine the marginal effect of an increase in income of $1000
+prestige_income0 <- unname(intercept + slope_income*0 + slope_professional*1 + slope_interaction*0*1)
+prestige_income1000 <- unname(intercept + slope_income*1000 + slope_professional*1 + slope_interaction*1000*1)
 
-prestige_income_effect <- income1000 - income0
+# marginal effect of income
+prestige_income_effect <- prestige_income1000 - prestige_income0
 
 # g) 
 
-# change in y 
-prof <- unname(intercept + slope_income*6000 + slope_professional*1 + slope_interaction*6000*1)
-unprof <- unname(intercept + slope_income*6000 + slope_professional*0 + slope_interaction*6000*0)
+# calculating the prestige when the profession is professional and when the profession is blue or white collared jobs
+# this is to determine the marginal effect of changing profession when income is $6000
+prestige_prof <- unname(intercept + slope_income*6000 + slope_professional*1 + slope_interaction*6000*1)
+prestige_unprof <- unname(intercept + slope_income*6000 + slope_professional*0 + slope_interaction*6000*0)
 
-prestige_prof_effect <- prof - unprof
+# marginal effect of type of profession
+prestige_prof_effect <- prestige_prof - prestige_unprof
 
 # Question 2
 
@@ -144,6 +156,7 @@ conclusion_adjacent <- "There is a linear relationship between the proportion of
 
 # c)
 
+# y-intercept and standard error of y-intercept
 constant <- 0.302
 constant_se <- 0.011
 
@@ -153,6 +166,7 @@ interpretation_constant <- "The intercept represents the predicted average base 
 
 # d)
 
+# r-squared value to represent the fit of the model 
 r_sq <- 0.094
 n <- 131
 
