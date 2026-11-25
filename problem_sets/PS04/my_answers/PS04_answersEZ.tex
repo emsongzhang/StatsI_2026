@@ -106,7 +106,7 @@ help(Prestige)
 	\lstinputlisting[language=R, firstline=54, lastline=54]{PS04_answersEZ.R}
 	
 	\textbf{Analysis:}\\
-	Here, I created a new column called "professional". \hl{I use the ifelse function to encode the different categories within the type column.} If the type is prof", then it is encoded to 1. Any other type (bc or wc) will be encoded to 0. 
+	Here, I created a new column called "professional". \hl{I use the ifelse function to encode the different categories within the type column.} If the type is prof", then it is encoded to 1. Any other type (bc or wc) will be encoded to 0. This esults in professional being a new binary variable. 
 	
 	\item [(b)]
 	Run a linear model with \texttt{prestige} as an outcome and \texttt{income}, \texttt{professional}, and the interaction of the two as predictors (Note: this is a continuous $\times$ dummy interaction.)
@@ -116,40 +116,42 @@ help(Prestige)
 	\input{q1_regression.tex}
 	
 	\textbf{Analysis:}\\
-	I use the lm function in R to run the multi-linear regression. From the regression table output, we observe that all the coefficients are significant at the alpha threshold of 0.01. This indicates that 
+	I use the lm function in R to run the multi-linear regression with prestige as the outcome and income, professional, and the interaction term income:professional as the predictors. The interaction term is included to see whether the relationship between income and prestige is different for professionals than for blue and white collar workers. From the regression table output, we observe that all the coefficients are signficiant at the alpha threshold of 0.01. This indicates that it is highly unlikely that the relationships observed are due to random chance along. The y-intercept has a value of 21.142, which is the predicted prestige score for a non-professional worker with an income of 0. The standard errors of the coefficients are all relatively small in comparison to their coefficients, so the estimates can be said to be relatively precise.
 	
-	The y-intercept has a value of 21.142 
+	It is important to note that professional has a larger standard error (4.248) than income (0.0005). This could potentially be explained by the fact that the two variables are measured on different scales. Income is measured in dollars, whereas professional is a binary variable measured by 0 and 1. The standard error may be slightly inflated for professional because the coefficient describes the gap at an income of 0, which is far from the incomes of the professionals in the data, and because professional is strongly correlated with the interaction term. 
 	
-	Standard error 
+	Lastly, the fit of the model can be observed through the R-squared value of 0.787, meaning that income, profession type, and their interaction together explain 78.7\% of the variation in prestige. 
 	
-	Fit of the model   
-	
-	\hl{}
+	\hl{All predictors are signficant at the 0.01 level, and the model explains 78.7\% of the variation in prestige.}
 	
 	\item [(c)]
 	Write the prediction equation based on the result.
 	
 	\lstinputlisting[language=R, firstline=71, lastline=75]{PS04_answersEZ.R}
 	
-	\textbf{Analysis:}\\
+	\begin{equation*}
+		\widehat{prestige} = 21.142 + 0.003 \cdot income + 37.781 \cdot professional - 0.002 \cdot (income \times professional)
+	\end{equation*}
 	
-	\hl{}
+	\textbf{Analysis:}\\
+	To write out the prediction equation, I use the built0in coef( ) function in R to pull the intercept and each slope coefficient. Following the general form of a linear regression with an interaction term, the predicted prestige is equal to the intercept plus each coefficient multiplied by its predictor. It is important to note that the interaction term is the product of income and profesional, so it only contributes to the prediction when professional = 1. 
 	
 	\item [(d)]
 	Interpret the coefficient for \texttt{income}.
 	
 	\textbf{Analysis:}\\
-	Provided that professional = 0 (those who work blue or white collared jobs), a one unit increase in income is, on average, associated with 0.003 units increase in prestige. Provided that professional = 1 (those who work professional jobs), a one unit increase in income is, on average, associated with 0.001 units increase in prestige. The coefficient of the interaction term (income:profession) shows the difference in slope between the two lines from the equations above (0.001 - 0.003 = -0.002). The average effect on prestige of a one-unit increase income does depend on the type of profession.
-
-	hl{A real-world explanation of the model coefficients represent that prestige generally tends to be higher for individuals with a higher income; however, prestige increases at a much lower rate with the increase in income for individuals who work professional jobs rather than blue or white collared jobs.} Adding everything together, the positive association between prestige and income is dependent on the type of profession a given individual has, whether that be professional versus blue and white collared jobs.
+	Because the model includes an interaction term, the effect of income depends on the value of professional, so the two groups need to be looked at separately. When professional = 0, the prediction equation simplifies to $\widehat{prestige} = 21.142 + 0.003 \cdot income$. When professional = 1, it simplifies to $\widehat{prestige} = 58.923 + 0.001 \cdot income$, since $21.142 + 37.781 = 58.923$ and $0.003 + (-0.002) = 0.001$. This tells us that for those who work blue or white collared jobs, a one unit increase in income is, on average, associated with a 0.003 unit increase in prestige. For those who work professional jobs, a one unit increase in income is, on average, associated with a 0.001 unit increase in prestige. The coefficient of the interaction term (income:professional) shows the difference in slope between these two lines ($0.001 - 0.003 = -0.002$). With that in mind, the average effect of income on prestige does depend on the type of profession.
+	
+	\hl{The income coefficient (0.003) is the effect of a one unite increase in income on prestige for non-professionals. Prestige tends to be higher for individuals with a higher income, but it increases at a lower rate for professionals than for blue and white collar workers.}
 	
 	\item [(e)]
 	Interpret the coefficient for \texttt{professional}.
 	
 	\textbf{Analysis:}\\
+	The coefficient for professional tells us how much the intercept shifts when we move from the non-professional group to the professional group. When income is set to 0, the interaction term also drops out, so the prediction equation becomes $\widehat{prestige} = 21.142 + 37.781 \cdot professional$. This means that the professional line starts 37.781 units higher than the non-professional line, which we also saw in part d where the professional intercept was 58.923 compared to 21.142 for non-professionals. However, it is important to not that because the model includes the interaction term, the difference between the two groups is not the same at every income level. The gap in predicted prestige is equal to $37.781 - 0.002 \cdot income$, so it shrinks by 0.002 units for every one dollar increase in income. Since no occupation in the data actually has an income of 0, the coefficient is best understood as the difference between the intercepts of the professional and non-professional regression lines. 
 	
-	\hl{Holding income constant, on average, those who have professional jobs have 37.781 units of prestige more than those who work blue or white collared jobs.}
-	
+	\hl{When income is 0, those who have professional jobs have, on average, 37.781 units of prestige more than those who work blue and white collared jobs, and this gap gets smaller as income increases.}
+		
 	\item [(f)]
 	What is the effect of a \$1,000 increase in income on prestige score for professional occupations? In other words, we are interested in the marginal effect of income when the variable \texttt{professional} takes the value of $1$. Calculate the change in $\hat{y}$ associated with a \$1,000 increase in income based on your answer for (c).
 	
@@ -157,8 +159,9 @@ help(Prestige)
 	\lstinputlisting[language=R, firstline=106, lastline=106]{PS04_answersEZ.R}
 	
 	\textbf{Analysis:}\\
+	To find the marginal effect of a \$1,000 increase in income for professionals, we use the prediction equation from part c and set professional = 1. We first calculate the predicted prestige when income is 0, and then the predicted prestige when incomeis 1,000. Since the model is linear, the starting value of income does not matter, so an two incomes that are 1,000 apart would give us the same difference. Subtracting the two predictions leaves us with $1000 \times (0.003 + (-0.002))$, which is the slope for professionals multiplied by 1,000. We result in a change of 0.845 in predicted prestige. 
 	
-	\hl{}
+	\hl{For professional occupations, a \$1,000 increase in income is associated with a 0.845 unit increase in predicted prestige. }
 	
 	\item [(g)]
 	What is the effect of changing one's occupations from non-professional to professional when her income is \$6,000? We are interested in the marginal effect of professional jobs when the variable \texttt{income} takes the value of $6,000$. Calculate the change in $\hat{y}$ based on your answer for (c).
@@ -167,8 +170,9 @@ help(Prestige)
 	\lstinputlisting[language=R, firstline=116, lastline=116]{PS04_answersEZ.R}
 	
 	\textbf{Analysis:}\\
+	To find the marginal effect of changing from a non-professional to a professional occupation at an income of \$6,000, we use the prediction equation and set inceom = 6,000. We calculate the predicted prestige once with professional = 1 and once with professional = 0, and then take the difference. Since income is held at 6,000 in both, the income term cancels out, which leaves us with $37.781 + (-0.002) \times 6000$. This shows that the effect of being a professional gets smaller as inceom increases, because the negative interaction term is subtracted for every unit of income. We result in a change of 23.827 in predicted prestige.
 	
-	\hl{}
+	\hl{At an income of \$6,000, changing from a non-professional to a professional occupation is associated with a 23.827 unit change in predicted prestige.}
 	
 	
 \end{enumerate}

@@ -51,7 +51,7 @@ help(Prestige)
 # creating new column called "professional" that encodes the column "type"
 # professionals are coded as 1
 # blue and white collar workers are coded as 0
-Prestige["professional"] <- ifelse(Prestige["type"] == "prof", 1, 0)
+Prestige$professional <- ifelse(Prestige$type == "prof", 1, 0)
 
 # b) 
 
@@ -93,11 +93,15 @@ interpretation_income <- "Provided that professional = 0 (those who work blue or
 # prestige = 21.142 + 37.781* professional 
 
 # interpreting the slope coefficient of professional
-interpretation_professional <- "Holding income constant, on average, those who have professional jobs have 37.781 units of prestige more than those who work blue or white collared jobs."
+interpretation_professional <- "When income is 0, on average, those who have professional jobs have 37.781 units of prestige more than those who work blue or white collared jobs.
+                                Because of the interaction term, this gap of 37.781 units shrinks by 0.002 units for every one unit increase in income. 
+                                Since no occupation actually has an income of 0, the coefficient best represents the difference between the intercepts of the two regression lines of nonprofessionals and professionals."
 
 # f)
 
-# calculating the prestige when income is 0 and when income is 100
+# use unname function to remove labels
+
+# calculating the prestige when income is 0 and when income is 1000
 # this is to determine the marginal effect of an increase in income of $1000
 prestige_income0 <- unname(intercept + slope_income*0 + slope_professional*1 + slope_interaction*0*1)
 prestige_income1000 <- unname(intercept + slope_income*1000 + slope_professional*1 + slope_interaction*1000*1)
@@ -173,7 +177,7 @@ conclusion_adjacent <- "There is a linear relationship between the proportion of
 constant <- 0.302
 constant_se <- 0.011
 
-interpretation_constant <- "The intercept represents the predicted average base proportion of vote that went to McAuliff's opponent Ken Cuccinelli (which is 0.302) when there are no yard signs in the precincts.
+interpretation_constant <- "The intercept represents the predicted average base proportion of vote that went to McAuliff's opponent Ken Cuccinelli (which is 0.302) when there are no yard signs in the precincts and were not next to precincts with signs.
                             We also observe a relatively low standard error of 0.011, which indicates that the estimated baseline value of vote shares when there are no yard signs is precise 
                             and would vary only slightly across different random samples from the same population."
 
@@ -186,6 +190,7 @@ n <- 131
 interpretation_fit <- "We observe an R-squared value of 0.094, which means that taking into account of precincts with yard signs and precincts adjacent to yard signs,
                       both factors only explain 9.4% of the variation in the vote share that went to McAuliff's opponent Ken Cuccinelli. 
                       This tells us that whether or not a precinct has yard signs does not make a strong predictor to explain changes in voteshares.
-                      There are many other variables that have not been taken into account that may be confounders or would better explain the changes in voteshares. 
-                      For example, income could have a large impact in determining the type of people that live within each precinct. That could influence political opinion as well. "
+                      However, a low R-squared value does not mean the signs have no effect, since both coefficients were significant in the regression equation. 
+                      Because the precincts were randomly assigned, other factors such as income or the political views of residents are not confounders. 
+                      Although these other variables and factors are spread evenly across the groups, they still explain most of the differences in vote share between precincts."
 
