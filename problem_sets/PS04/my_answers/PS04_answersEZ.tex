@@ -97,10 +97,10 @@ help(Prestige)
 
 \noindent We would like to study whether individuals with higher levels of income have more prestigious jobs. Moreover, we would like to study whether professionals have more prestigious jobs than blue and white collar workers.
 
-\newpage
 \begin{enumerate}
 	
 	\item [(a)]
+	
 	Create a new variable \texttt{professional} by recoding the variable \texttt{type} so that professionals are coded as $1$, and blue and white collar workers are coded as $0$ (Hint: \texttt{ifelse}).
 	
 	\lstinputlisting[language=R, firstline=54, lastline=54]{PS04_answersEZ.R}
@@ -155,8 +155,8 @@ help(Prestige)
 	\item [(f)]
 	What is the effect of a \$1,000 increase in income on prestige score for professional occupations? In other words, we are interested in the marginal effect of income when the variable \texttt{professional} takes the value of $1$. Calculate the change in $\hat{y}$ associated with a \$1,000 increase in income based on your answer for (c).
 	
-	\lstinputlisting[language=R, firstline=102, lastline=103]{PS04_answersEZ.R}
-	\lstinputlisting[language=R, firstline=106, lastline=106]{PS04_answersEZ.R}
+	\lstinputlisting[language=R, firstline=106, lastline=107]{PS04_answersEZ.R}
+	\lstinputlisting[language=R, firstline=110, lastline=110]{PS04_answersEZ.R}
 	
 	\textbf{Analysis:}\\
 	To find the marginal effect of a \$1,000 increase in income for professionals, we use the prediction equation from part c and set professional = 1. We first calculate the predicted prestige when income is 0, and then the predicted prestige when incomeis 1,000. Since the model is linear, the starting value of income does not matter, so an two incomes that are 1,000 apart would give us the same difference. Subtracting the two predictions leaves us with $1000 \times (0.003 + (-0.002))$, which is the slope for professionals multiplied by 1,000. We result in a change of 0.845 in predicted prestige. 
@@ -166,8 +166,8 @@ help(Prestige)
 	\item [(g)]
 	What is the effect of changing one's occupations from non-professional to professional when her income is \$6,000? We are interested in the marginal effect of professional jobs when the variable \texttt{income} takes the value of $6,000$. Calculate the change in $\hat{y}$ based on your answer for (c).
 	
-	\lstinputlisting[language=R, firstline=112, lastline=113]{PS04_answersEZ.R}
-	\lstinputlisting[language=R, firstline=116, lastline=116]{PS04_answersEZ.R}
+	\lstinputlisting[language=R, firstline=116, lastline=117]{PS04_answersEZ.R}
+	\lstinputlisting[language=R, firstline=120, lastline=120]{PS04_answersEZ.R}
 	
 	\textbf{Analysis:}\\
 	To find the marginal effect of changing from a non-professional to a professional occupation at an income of \$6,000, we use the prediction equation and set inceom = 6,000. We calculate the predicted prestige once with professional = 1 and once with professional = 0, and then take the difference. Since income is held at 6,000 in both, the income term cancels out, which leaves us with $37.781 + (-0.002) \times 6000$. This shows that the effect of being a professional gets smaller as inceom increases, because the negative interaction term is subtracted for every unit of income. We result in a change of 23.827 in predicted prestige.
@@ -209,55 +209,77 @@ a precinct that was adjacent to a precinct in the treatment group (since people 
 \begin{enumerate}
 	\item [(a)] Use the results from a linear regression to determine whether having these yard signs in a precinct affects vote share (e.g., conduct a hypothesis test with $\alpha = .05$).
 	
-	\lstinputlisting[language=R, firstline=122, lastline=122]{PS04_answersEZ.R}
+	\lstinputlisting[language=R, firstline=126, lastline=126]{PS04_answersEZ.R}
 		
 	\textbf{Assumptions:}\\
+	Before conducting the hypothesis test, we first identify whether the model meets the assumption criteria. The first assumption is that ther is a linear relationship between having yard signs in a precinct and the proportion ofthe vote that went to McAuliffe's opponenet Ken Cuccinelli. The second assumption is that the errors are independent, have constant variance, and are normally distributed. Information given to us also includes that the precincts were randomly assigned to the treatment and control groups. 
 	
 	\textbf{Hypothesis:}\\
+	Null Hypothesis: There is no linear relationship between having yard signs in a precinct and the proportion of the vote that went to Cuccinelli, after controlling for the effects of being next to precincts with yard signs. 
+	
+	Alternate Hypothesis: There is a linear relationship between having yard signs in a precinct and the proportion of the vote that went to Cuccinelli, after controlling for the effects of being next to precincts with yard signs. 
+	
+	\begin{align*}
+		H_0&: \beta_{assigned} = 0 \qquad \text{(yard signs in a precinct have no effect on vote share)}\\
+		H_A&: \beta_{assigned} \neq 0 \qquad \text{(yard signs in a precinct have an effect on vote share)}
+	\end{align*}
 	
 	\textbf{Test Statistic:}
-	\lstinputlisting[language=R, firstline=137, lastline=138]{PS04_answersEZ.R}
+	\lstinputlisting[language=R, firstline=141, lastline=142]{PS04_answersEZ.R}
 	
 	\textbf{P-Value:}
-	\lstinputlisting[language=R, firstline=141, lastline=141]{PS04_answersEZ.R}
+	\lstinputlisting[language=R, firstline=145, lastline=145]{PS04_answersEZ.R}
 	
 	\textbf{Conclusion:}\\
+	To calculate the t-statistic, we divide the coefficient (0.042) by its standard error (0.016), which gives us 2.625. For the degress of freedom, we subtract the number of predictors, which is 2, and one more for the constant from the sample size of 131. This leaves us with a degree of freedom of 128. Since we are testing whether there is any effect, and not only a positive or negative one, we proceed with a two-tailed test and multiply the probability from the built-in pt() function by 2. The p-value we observe is 0.00972, which is smaller than the alpha threshold of 0.05. Hence, in a world where the null is true, it is unlikely that we would observe a value as  extreme as the one in our sample. With that in mind, we reject the null hypothesis.
 	
-	\hl{}
+	\hl{There is sufficient evidence to reject the null hypothesis and can conclude that there is a linear relationship between the proportion of the vote that went to Ken Cuccinelli and having yard signs in a precinct.}
 	
 	\item [(b)]  Use the results to determine whether being
 	next to precincts with these yard signs affects vote
 	share (e.g., conduct a hypothesis test with $\alpha = .05$).
 	
 	\textbf{Assumptions:}\\
+	We use the same assumptions as part a. The first assumption is that there is a linear relationship between being adjacent to precints with yard signs and the proportion of the vote that went to Ken Cuccinelli. The second assumption is that the errors are independent, have constant variance, and are normally distributed. 
 	
 	\textbf{Hypothesis:}\\
+	Null Hypothesis: There is no linear relationship between being next to precincts with yard signs and the proportion of the vote that went to Cuccinelli, after controlling for the effects of having yard signs in the precinct itself. 
+	
+	Alternate Hypothesis: There is a linear relationship between being next to precincts with yard signs and the proportion of the vote that went to Cuccinelli, after controlling for the effects of having yard signs in the precinct itself. 
+	
+	\begin{align*}
+		H_0&: \beta_{adjacent} = 0 \qquad \text{(being next to yard signs has no effect on vote share)}\\
+		H_A&: \beta_{adjacent} \neq 0 \qquad \text{(being next to yard signs has an effect on vote share)}
+	\end{align*}
 	
 	\textbf{Test Statistic:}
-	\lstinputlisting[language=R, firstline=161, lastline=162]{PS04_answersEZ.R}
+	\lstinputlisting[language=R, firstline=165, lastline=166]{PS04_answersEZ.R}
 	
 	\textbf{P-Value:}
-	\lstinputlisting[language=R, firstline=165, lastline=165]{PS04_answersEZ.R}
+	\lstinputlisting[language=R, firstline=169, lastline=169]{PS04_answersEZ.R}
 	
 	\textbf{Conclusion:}\\
+	Following the same steps as part a, we divide the coefficient (0.042) by its standard error (0.013) to receive a t-statistic of 3.231, with 128 degrees of freedom. It is important to note that although the coefficient is the same as in part a, the standard error is smaller, so the t-statistic is larger. The p-value we observe for the two-tailed test is 0.00157, which is smaller than the alpha threshold of 0.05. This indicates that the difference is highly unlikely to random occurence, so we reject the null hypothesis.
 	
-	\hl{}
+	\hl{There is sufficient evidence to reject the null hypothesis and can conclude that there is a linear relationship between the proportion of the vote that went to Ken Cuccinelli and being next to precincts with yard signs. }
 	
 	\item [(c)] Interpret the coefficient for the constant term substantively.
 	
-	\lstinputlisting[language=R, firstline=173, lastline=174]{PS04_answersEZ.R}
+	\lstinputlisting[language=R, firstline=177, lastline=178]{PS04_answersEZ.R}
 	
 	\textbf{Analysis:}\\
+	The constant term is the predicted value of the dependent variable when all the predictors are equal to 0. In this model, there are two predictors, so the intercept represents the predicted average base proportion of the vote that went to McAuliffe's opponent Ken Cuccinelli in precincts that were neither assigned yard signs nor adjacent to a precinct with yard signs. In other words, it is the baseline vote share for precincts that were not exposed to the signs at all. We also observe a relatively low standard error of 0.011, which indicates that the estimated baselin value of vote share is precise and would vary only slightly across different random samples from the same population. 
 	
-	\hl{}
+	\hl{The constant (0.302) means that, on average, about 30.2\% of the vote went to Ken Cuccinelli in precints that were neither assigned lawn signs nor adjacent to a precinct with lawn signs. }
 	
 	\item [(d)] Evaluate the model fit for this regression.  What does this	tell us about the importance of yard signs versus other factors that are not modeled?
 	
-	\lstinputlisting[language=R, firstline=183, lastline=184]{PS04_answersEZ.R}
+	\lstinputlisting[language=R, firstline=187, lastline=188]{PS04_answersEZ.R}
 	
 	\textbf{Analysis:}\\
+	To evaluate the fit of the model, we look at the R-squared value, which measures the proportion of variation in the dependent variable that is explained by the predictors. We observe an R-squared value of 0.094, which means that, taking into account precincts with yard signs and precincts adjacent to yard signs, both factors only explain 9.4\% of the variation in the vote share that went to McAuliffe's opponent Ken Cuccinelli. This tells us that yard signs are not a strong predictors of the overall differences in vote share between precincts. However, a low R-squared value does not mean that the signs have no effect, since both coefficients were significant in parts a and b. It is important to note that because the precincts were randomly assigned, other factors such as income or the political views of residents are not confounders. Random assignment spreads these factors evenly across the treatment and control groups, so they do not bias the estimated effect of the signs. Even so, these other factors that are not modeled still explain most of the differences in vote shares between precincts. 
 	
-	\hl{}
+	\hl{The model has a weak fit (R-squared = 0.094), which means that yard signs have a real but small effect of about 4.2 percentage points on vote share, while other factors that are not modeled explain most of the variation.}
 	
 \end{enumerate}  
 

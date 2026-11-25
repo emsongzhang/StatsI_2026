@@ -145,7 +145,7 @@ df_assigned <- 131-2-1
 p_val_assigned <- 2*pt(abs(t_stat_assigned), df_assigned, lower.tail = F)
 
 # conclusion 
-conclusion_assigned <- "There is a linear relationship between the proportion of vote that went to McAuliff's opponent Ken Cuccinelli and having yard signs in a precinct."   
+conclusion_assigned <- "Reject the null. There is a linear relationship between the proportion of vote that went to McAuliff's opponent Ken Cuccinelli and having yard signs in a precinct."   
 
 # b) 
 
@@ -169,7 +169,7 @@ df_adjacent <- 131-2-1
 p_val_adjacent <- 2*pt(abs(t_stat_adjacent), df_adjacent, lower.tail = F)
 
 # conclusion
-conclusion_adjacent <- "There is a linear relationship between the proportion of vote that went to McAuliff's opponent Ken Cuccinelli and being next to precincts with yard signs." 
+conclusion_adjacent <- "Reject the null. There is a linear relationship between the proportion of vote that went to McAuliff's opponent Ken Cuccinelli and being next to precincts with yard signs." 
 
 # c)
 
