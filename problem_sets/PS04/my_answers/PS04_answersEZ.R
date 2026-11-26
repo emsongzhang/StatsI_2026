@@ -60,7 +60,7 @@ Prestige$professional <- ifelse(Prestige$type == "prof", 1, 0)
 model <- lm(prestige ~ income + professional + income:professional, data = Prestige)
 summary(model)
 
-# displaying summary of model usin stargazer for formatting
+# displaying summary of model using stargazer for formatting
 output_stargazer("q1_regression.tex", model,
                  title = "Regression of prestige on income and profession",
                  label = "tab:q1")
@@ -82,8 +82,8 @@ equation <- paste("prestige =", intercept, "+", slope_income, "* income", "+", s
 # interpreting the slope coefficient of income
 interpretation_income <- "Provided that professional = 0 (those who work blue or white collared jobs), a one unit increase in income is, on average, associated with 0.003 units increase in prestige.
                           Provided that professional = 1 (those who work professional jobs), a one unit increase in income is, on average, associated with 0.001 units increase in prestige.
-                          The coefficient of the interaction term (income:profession) shows the difference in slope between the two lines from the equations above (0.001 - 0.003 = -0.002).
-                          The average effect on prestige of a one-unit increase income does depend on the type of profession.
+                          The coefficient of the interaction term (income:professional) shows the difference in slope between the two lines from the equations above (0.001 - 0.003 = -0.002).
+                          The average effect on prestige of a one-unit increase in income does depend on the type of profession.
                           A real-world explanation of the model coefficients represent that prestige generally tends to be higher for individuals with a higher income;
                           however, prestige increases at a much lower rate with the increase in income for individuals who work professional jobs rather than blue or white collared jobs. 
                           Adding everything together, the positive association between prestige and income is dependent on the type of profession a given individual has, whether that be professional versus blue and white collared jobs."
@@ -128,13 +128,13 @@ alpha = 0.05
 # testing precinct assigned lawn signs
 
 # assumptions 
-# 1) linearity between having yard signs in precinct and the proportion of vote that went to McAuliff's opponent Ken Cuccinelli
-# 2) errors are independent, constant, and normal
+# 1) linearity between having yard signs in precinct and the proportion of vote that went to McAuliffe's opponent Ken Cuccinelli
+# 2) errors are independent, have constant variance, and are normal
 
 # hypothesis
-h0_assigned <- "There is no linear relationship between having yard signs in a precinct and the proportion of vote that went to McAuliff's opponent Ken Cuccinelli, 
+h0_assigned <- "There is no linear relationship between having yard signs in a precinct and the proportion of vote that went to McAuliffe's opponent Ken Cuccinelli, 
                 after controlling for the effects of being next to precincts with these yard signs in the model."
-ha_assigned <- "There is a linear relationship between having yard signs in a precinct and the proportion of vote that went to McAuliff's opponent Ken Cuccinelli, 
+ha_assigned <- "There is a linear relationship between having yard signs in a precinct and the proportion of vote that went to McAuliffe's opponent Ken Cuccinelli, 
                 after controlling for the effects of being next to precincts with these yard signs in the model."
 
 # test statistic
@@ -145,20 +145,20 @@ df_assigned <- 131-2-1
 p_val_assigned <- 2*pt(abs(t_stat_assigned), df_assigned, lower.tail = F)
 
 # conclusion 
-conclusion_assigned <- "Reject the null. There is a linear relationship between the proportion of vote that went to McAuliff's opponent Ken Cuccinelli and having yard signs in a precinct."   
+conclusion_assigned <- "Reject the null. There is a linear relationship between the proportion of vote that went to McAuliffe's opponent Ken Cuccinelli and having yard signs in a precinct."   
 
 # b) 
 
 # testing precinct adjacent to lawn signs
 
 # assumptions 
-# 1) linearity between being adjacent to precincts with yard signs and the proportion of vote that went to McAuliff's opponent Ken Cuccinelli
+# 1) linearity between being adjacent to precincts with yard signs and the proportion of vote that went to McAuliffe's opponent Ken Cuccinelli
 # 2) errors are independent, constant, and normal
 
 # hypothesis
-h0_adjacent <- "There is no linear relationship between being next to precincts with yard signs and the proportion of vote that went to McAuliff's opponent Ken Cuccinelli, 
+h0_adjacent <- "There is no linear relationship between being next to precincts with yard signs and the proportion of vote that went to McAuliffe's opponent Ken Cuccinelli, 
                 after controlling for the effects of having these yard signs in the precincts in the model."
-ha_adjacent <- "There is a linear relationship between being next to precincts with yard signs and the proportion of vote that went to McAuliff's opponent Ken Cuccinelli, 
+ha_adjacent <- "There is a linear relationship between being next to precincts with yard signs and the proportion of vote that went to McAuliffe's opponent Ken Cuccinelli, 
                 after controlling for the effects of having these yard signs in the precincts in the model."
 
 # test statistic
@@ -169,7 +169,7 @@ df_adjacent <- 131-2-1
 p_val_adjacent <- 2*pt(abs(t_stat_adjacent), df_adjacent, lower.tail = F)
 
 # conclusion
-conclusion_adjacent <- "Reject the null. There is a linear relationship between the proportion of vote that went to McAuliff's opponent Ken Cuccinelli and being next to precincts with yard signs." 
+conclusion_adjacent <- "Reject the null. There is a linear relationship between the proportion of vote that went to McAuliffe's opponent Ken Cuccinelli and being next to precincts with yard signs." 
 
 # c)
 
@@ -177,7 +177,7 @@ conclusion_adjacent <- "Reject the null. There is a linear relationship between 
 constant <- 0.302
 constant_se <- 0.011
 
-interpretation_constant <- "The intercept represents the predicted average base proportion of vote that went to McAuliff's opponent Ken Cuccinelli (which is 0.302) when there are no yard signs in the precincts and were not next to precincts with signs.
+interpretation_constant <- "The intercept represents the predicted average base proportion of vote that went to McAuliffe's opponent Ken Cuccinelli (which is 0.302) when there are no yard signs in the precincts and were not next to precincts with signs.
                             We also observe a relatively low standard error of 0.011, which indicates that the estimated baseline value of vote shares when there are no yard signs is precise 
                             and would vary only slightly across different random samples from the same population."
 
@@ -187,9 +187,9 @@ interpretation_constant <- "The intercept represents the predicted average base 
 r_sq <- 0.094
 n <- 131
 
-interpretation_fit <- "We observe an R-squared value of 0.094, which means that taking into account of precincts with yard signs and precincts adjacent to yard signs,
-                      both factors only explain 9.4% of the variation in the vote share that went to McAuliff's opponent Ken Cuccinelli. 
-                      This tells us that whether or not a precinct has yard signs does not make a strong predictor to explain changes in voteshares.
+interpretation_fit <- "We observe an R-squared value of 0.094, which means that taking into account precincts with yard signs and precincts adjacent to yard signs,
+                      both factors only explain 9.4% of the variation in the vote share that went to McAuliffe's opponent Ken Cuccinelli. 
+                      This tells us that whether or not a precinct has yard signs does not make a strong predictor to explain changes in vote shares.
                       However, a low R-squared value does not mean the signs have no effect, since both coefficients were significant in the regression equation. 
                       Because the precincts were randomly assigned, other factors such as income or the political views of residents are not confounders. 
                       Although these other variables and factors are spread evenly across the groups, they still explain most of the differences in vote share between precincts."

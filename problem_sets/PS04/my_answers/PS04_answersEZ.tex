@@ -95,7 +95,7 @@ help(Prestige)
 \end{verbatim} 
 
 
-\noindent We would like to study whether individuals with higher levels of income have more prestigious jobs. Moreover, we would like to study whether professionals have more prestigious jobs than blue and white collar workers.
+\noindent We would like to study whether individuals with higher levels of income have more prestigious jobs. Moreover, we would like to study whether essionals have more prestigious jobs than blue and white collar workers.
 
 \begin{enumerate}
 	
@@ -106,7 +106,7 @@ help(Prestige)
 	\lstinputlisting[language=R, firstline=54, lastline=54]{PS04_answersEZ.R}
 	
 	\textbf{Analysis:}\\
-	Here, I created a new column called "professional". \hl{I use the ifelse function to encode the different categories within the type column.} If the type is prof", then it is encoded to 1. Any other type (bc or wc) will be encoded to 0. This esults in professional being a new binary variable. 
+	Here, I created a new column called "professional". \hl{I use the ifelse function to encode the different categories within the type column.} If the type is "prof", then it is encoded to 1. Any other type (bc or wc) will be encoded to 0. This results in professional being a new binary variable. 
 	
 	\item [(b)]
 	Run a linear model with \texttt{prestige} as an outcome and \texttt{income}, \texttt{professional}, and the interaction of the two as predictors (Note: this is a continuous $\times$ dummy interaction.)
@@ -116,7 +116,7 @@ help(Prestige)
 	\input{q1_regression.tex}
 	
 	\textbf{Analysis:}\\
-	I use the lm function in R to run the multi-linear regression with prestige as the outcome and income, professional, and the interaction term income:professional as the predictors. The interaction term is included to see whether the relationship between income and prestige is different for professionals than for blue and white collar workers. From the regression table output, we observe that all the coefficients are signficiant at the alpha threshold of 0.01. This indicates that it is highly unlikely that the relationships observed are due to random chance along. The y-intercept has a value of 21.142, which is the predicted prestige score for a non-professional worker with an income of 0. The standard errors of the coefficients are all relatively small in comparison to their coefficients, so the estimates can be said to be relatively precise.
+	I use the lm function in R to run the multi-linear regression with prestige as the outcome and income, professional, and the interaction term income:professional as the predictors. The interaction term is included to see whether the relationship between income and prestige is different for professionals than for blue and white collar workers. From the regression table output, we observe that all the coefficients are significant at the alpha threshold of 0.01. This indicates that it is highly unlikely that the relationships observed are due to random chance alone. The y-intercept has a value of 21.142, which is the predicted prestige score for a non-professional worker with an income of 0. The standard errors of the coefficients are all relatively small in comparison to their coefficients, so the estimates can be said to be relatively precise.
 	
 	It is important to note that professional has a larger standard error (4.248) than income (0.0005). This could potentially be explained by the fact that the two variables are measured on different scales. Income is measured in dollars, whereas professional is a binary variable measured by 0 and 1. The standard error may be slightly inflated for professional because the coefficient describes the gap at an income of 0, which is far from the incomes of the professionals in the data, and because professional is strongly correlated with the interaction term. 
 	
@@ -134,7 +134,7 @@ help(Prestige)
 	\end{equation*}
 	
 	\textbf{Analysis:}\\
-	To write out the prediction equation, I use the built0in coef( ) function in R to pull the intercept and each slope coefficient. Following the general form of a linear regression with an interaction term, the predicted prestige is equal to the intercept plus each coefficient multiplied by its predictor. It is important to note that the interaction term is the product of income and profesional, so it only contributes to the prediction when professional = 1. 
+	To write out the prediction equation, I use the built-in coef( ) function in R to pull the intercept and each slope coefficient. Following the general form of a linear regression with an interaction term, the predicted prestige is equal to the intercept plus each coefficient multiplied by its predictor. It is important to note that the interaction term is the product of income and professional, so it only contributes to the prediction when professional = 1. 
 	
 	\item [(d)]
 	Interpret the coefficient for \texttt{income}.
@@ -142,13 +142,13 @@ help(Prestige)
 	\textbf{Analysis:}\\
 	Because the model includes an interaction term, the effect of income depends on the value of professional, so the two groups need to be looked at separately. When professional = 0, the prediction equation simplifies to $\widehat{prestige} = 21.142 + 0.003 \cdot income$. When professional = 1, it simplifies to $\widehat{prestige} = 58.923 + 0.001 \cdot income$, since $21.142 + 37.781 = 58.923$ and $0.003 + (-0.002) = 0.001$. This tells us that for those who work blue or white collared jobs, a one unit increase in income is, on average, associated with a 0.003 unit increase in prestige. For those who work professional jobs, a one unit increase in income is, on average, associated with a 0.001 unit increase in prestige. The coefficient of the interaction term (income:professional) shows the difference in slope between these two lines ($0.001 - 0.003 = -0.002$). With that in mind, the average effect of income on prestige does depend on the type of profession.
 	
-	\hl{The income coefficient (0.003) is the effect of a one unite increase in income on prestige for non-professionals. Prestige tends to be higher for individuals with a higher income, but it increases at a lower rate for professionals than for blue and white collar workers.}
+	\hl{The income coefficient (0.003) is the effect of a one unit increase in income on prestige for non-professionals. Prestige tends to be higher for individuals with a higher income, but it increases at a lower rate for professionals than for blue and white collar workers.}
 	
 	\item [(e)]
 	Interpret the coefficient for \texttt{professional}.
 	
 	\textbf{Analysis:}\\
-	The coefficient for professional tells us how much the intercept shifts when we move from the non-professional group to the professional group. When income is set to 0, the interaction term also drops out, so the prediction equation becomes $\widehat{prestige} = 21.142 + 37.781 \cdot professional$. This means that the professional line starts 37.781 units higher than the non-professional line, which we also saw in part d where the professional intercept was 58.923 compared to 21.142 for non-professionals. However, it is important to not that because the model includes the interaction term, the difference between the two groups is not the same at every income level. The gap in predicted prestige is equal to $37.781 - 0.002 \cdot income$, so it shrinks by 0.002 units for every one dollar increase in income. Since no occupation in the data actually has an income of 0, the coefficient is best understood as the difference between the intercepts of the professional and non-professional regression lines. 
+	The coefficient for professional tells us how much the intercept shifts when we move from the non-professional group to the professional group. When income is set to 0, the interaction term also drops out, so the prediction equation becomes $\widehat{prestige} = 21.142 + 37.781 \cdot professional$. This means that the professional line starts 37.781 units higher than the non-professional line, which we also saw in part d where the professional intercept was 58.923 compared to 21.142 for non-professionals. However, it is important to note that because the model includes the interaction term, the difference between the two groups is not the same at every income level. The gap in predicted prestige is equal to $37.781 - 0.002 \cdot income$, so it shrinks by 0.002 units for every one dollar increase in income. Since no occupation in the data actually has an income of 0, the coefficient is best understood as the difference between the intercepts of the professional and non-professional regression lines. 
 	
 	\hl{When income is 0, those who have professional jobs have, on average, 37.781 units of prestige more than those who work blue and white collared jobs, and this gap gets smaller as income increases.}
 		
@@ -159,7 +159,7 @@ help(Prestige)
 	\lstinputlisting[language=R, firstline=110, lastline=110]{PS04_answersEZ.R}
 	
 	\textbf{Analysis:}\\
-	To find the marginal effect of a \$1,000 increase in income for professionals, we use the prediction equation from part c and set professional = 1. We first calculate the predicted prestige when income is 0, and then the predicted prestige when incomeis 1,000. Since the model is linear, the starting value of income does not matter, so an two incomes that are 1,000 apart would give us the same difference. Subtracting the two predictions leaves us with $1000 \times (0.003 + (-0.002))$, which is the slope for professionals multiplied by 1,000. We result in a change of 0.845 in predicted prestige. 
+	To find the marginal effect of a \$1,000 increase in income for professionals, we use the prediction equation from part c and set professional = 1. We first calculate the predicted prestige when income is 0, and then the predicted prestige when income is 1,000. Since the model is linear, the starting value of income does not matter, so any two incomes that are 1,000 apart would give us the same difference. Subtracting the two predictions leaves us with $1000 \times (0.003 + (-0.002))$, which is the slope for professionals multiplied by 1,000. We result in a change of 0.845 in predicted prestige. 
 	
 	\hl{For professional occupations, a \$1,000 increase in income is associated with a 0.845 unit increase in predicted prestige. }
 	
@@ -170,7 +170,7 @@ help(Prestige)
 	\lstinputlisting[language=R, firstline=120, lastline=120]{PS04_answersEZ.R}
 	
 	\textbf{Analysis:}\\
-	To find the marginal effect of changing from a non-professional to a professional occupation at an income of \$6,000, we use the prediction equation and set inceom = 6,000. We calculate the predicted prestige once with professional = 1 and once with professional = 0, and then take the difference. Since income is held at 6,000 in both, the income term cancels out, which leaves us with $37.781 + (-0.002) \times 6000$. This shows that the effect of being a professional gets smaller as inceom increases, because the negative interaction term is subtracted for every unit of income. We result in a change of 23.827 in predicted prestige.
+	To find the marginal effect of changing from a non-professional to a professional occupation at an income of \$6,000, we use the prediction equation and set income = 6,000. We calculate the predicted prestige once with professional = 1 and once with professional = 0, and then take the difference. Since income is held at 6,000 in both, the income term cancels out, which leaves us with $37.781 + (-0.002) \times 6000$. This shows that the effect of being a professional gets smaller as income increases, because the negative interaction term is subtracted for every unit of income. We result in a change of 23.827 in predicted prestige.
 	
 	\hl{At an income of \$6,000, changing from a non-professional to a professional occupation is associated with a 23.827 unit change in predicted prestige.}
 	
@@ -212,7 +212,7 @@ a precinct that was adjacent to a precinct in the treatment group (since people 
 	\lstinputlisting[language=R, firstline=126, lastline=126]{PS04_answersEZ.R}
 		
 	\textbf{Assumptions:}\\
-	Before conducting the hypothesis test, we first identify whether the model meets the assumption criteria. The first assumption is that ther is a linear relationship between having yard signs in a precinct and the proportion ofthe vote that went to McAuliffe's opponenet Ken Cuccinelli. The second assumption is that the errors are independent, have constant variance, and are normally distributed. Information given to us also includes that the precincts were randomly assigned to the treatment and control groups. 
+	Before conducting the hypothesis test, we first identify whether the model meets the assumption criteria. The first assumption is that there is a linear relationship between having yard signs in a precinct and the proportion of the vote that went to McAuliffe's opponent Ken Cuccinelli. The second assumption is that the errors are independent, have constant variance, and are normally distributed. Information given to us also includes that the precincts were randomly assigned to the treatment and control groups. 
 	
 	\textbf{Hypothesis:}\\
 	Null Hypothesis: There is no linear relationship between having yard signs in a precinct and the proportion of the vote that went to Cuccinelli, after controlling for the effects of being next to precincts with yard signs. 
@@ -231,7 +231,7 @@ a precinct that was adjacent to a precinct in the treatment group (since people 
 	\lstinputlisting[language=R, firstline=145, lastline=145]{PS04_answersEZ.R}
 	
 	\textbf{Conclusion:}\\
-	To calculate the t-statistic, we divide the coefficient (0.042) by its standard error (0.016), which gives us 2.625. For the degress of freedom, we subtract the number of predictors, which is 2, and one more for the constant from the sample size of 131. This leaves us with a degree of freedom of 128. Since we are testing whether there is any effect, and not only a positive or negative one, we proceed with a two-tailed test and multiply the probability from the built-in pt() function by 2. The p-value we observe is 0.00972, which is smaller than the alpha threshold of 0.05. Hence, in a world where the null is true, it is unlikely that we would observe a value as  extreme as the one in our sample. With that in mind, we reject the null hypothesis.
+	To calculate the t-statistic, we divide the coefficient (0.042) by its standard error (0.016), which gives us 2.625. For the degrees of freedom, we subtract the number of predictors, which is 2, and one more for the constant from the sample size of 131. This leaves us with a degree of freedom of 128. Since we are testing whether there is any effect, and not only a positive or negative one, we proceed with a two-tailed test and multiply the probability from the built-in pt() function by 2. The p-value we observe is 0.00972, which is smaller than the alpha threshold of 0.05. Hence, in a world where the null is true, it is unlikely that we would observe a value as extreme as or more extreme than the one in our sample. With that in mind, we reject the null hypothesis.
 	
 	\hl{There is sufficient evidence to reject the null hypothesis and can conclude that there is a linear relationship between the proportion of the vote that went to Ken Cuccinelli and having yard signs in a precinct.}
 	
@@ -240,7 +240,7 @@ a precinct that was adjacent to a precinct in the treatment group (since people 
 	share (e.g., conduct a hypothesis test with $\alpha = .05$).
 	
 	\textbf{Assumptions:}\\
-	We use the same assumptions as part a. The first assumption is that there is a linear relationship between being adjacent to precints with yard signs and the proportion of the vote that went to Ken Cuccinelli. The second assumption is that the errors are independent, have constant variance, and are normally distributed. 
+	We use the same assumptions as part a. The first assumption is that there is a linear relationship between being adjacent to precints adjacent to precincts with yard signs and the proportion of the vote that went to Ken Cuccinelli. The second assumption is that the errors are independent, have constant variance, and are normally distributed. 
 	
 	\textbf{Hypothesis:}\\
 	Null Hypothesis: There is no linear relationship between being next to precincts with yard signs and the proportion of the vote that went to Cuccinelli, after controlling for the effects of having yard signs in the precinct itself. 
@@ -259,7 +259,7 @@ a precinct that was adjacent to a precinct in the treatment group (since people 
 	\lstinputlisting[language=R, firstline=169, lastline=169]{PS04_answersEZ.R}
 	
 	\textbf{Conclusion:}\\
-	Following the same steps as part a, we divide the coefficient (0.042) by its standard error (0.013) to receive a t-statistic of 3.231, with 128 degrees of freedom. It is important to note that although the coefficient is the same as in part a, the standard error is smaller, so the t-statistic is larger. The p-value we observe for the two-tailed test is 0.00157, which is smaller than the alpha threshold of 0.05. This indicates that the difference is highly unlikely to random occurence, so we reject the null hypothesis.
+	Following the same steps as part a, we divide the coefficient (0.042) by its standard error (0.013) to receive a t-statistic of 3.231, with 128 degrees of freedom. It is important to note that although the coefficient is the same as in part a, the standard error is smaller, so the t-statistic is larger. The p-value we observe for the two-tailed test is 0.00157, which is smaller than the alpha threshold of 0.05. This indicates that the difference is highly unlikely to be due to random occurence, so we reject the null hypothesis.
 	
 	\hl{There is sufficient evidence to reject the null hypothesis and can conclude that there is a linear relationship between the proportion of the vote that went to Ken Cuccinelli and being next to precincts with yard signs. }
 	
@@ -268,16 +268,16 @@ a precinct that was adjacent to a precinct in the treatment group (since people 
 	\lstinputlisting[language=R, firstline=177, lastline=178]{PS04_answersEZ.R}
 	
 	\textbf{Analysis:}\\
-	The constant term is the predicted value of the dependent variable when all the predictors are equal to 0. In this model, there are two predictors, so the intercept represents the predicted average base proportion of the vote that went to McAuliffe's opponent Ken Cuccinelli in precincts that were neither assigned yard signs nor adjacent to a precinct with yard signs. In other words, it is the baseline vote share for precincts that were not exposed to the signs at all. We also observe a relatively low standard error of 0.011, which indicates that the estimated baselin value of vote share is precise and would vary only slightly across different random samples from the same population. 
+	The constant term is the predicted value of the dependent variable when all the predictors are equal to 0. In this model, there are two predictors, so the intercept represents the predicted average base proportion of the vote that went to McAuliffe's opponent Ken Cuccinelli in precincts that were neither assigned yard signs nor adjacent to a precinct with yard signs. In other words, it is the baseline vote share for precincts that were not exposed to the signs at all. We also observe a relatively low standard error of 0.011, which indicates that the estimated baseline value of vote share is precise and would vary only slightly across different random samples from the same population. 
 	
-	\hl{The constant (0.302) means that, on average, about 30.2\% of the vote went to Ken Cuccinelli in precints that were neither assigned lawn signs nor adjacent to a precinct with lawn signs. }
+	\hl{The constant (0.302) means that, on average, about 30.2\% of the vote went to Ken Cuccinelli in precincts that were neither assigned lawn signs nor adjacent to a precinct with lawn signs. }
 	
 	\item [(d)] Evaluate the model fit for this regression.  What does this	tell us about the importance of yard signs versus other factors that are not modeled?
 	
 	\lstinputlisting[language=R, firstline=187, lastline=188]{PS04_answersEZ.R}
 	
 	\textbf{Analysis:}\\
-	To evaluate the fit of the model, we look at the R-squared value, which measures the proportion of variation in the dependent variable that is explained by the predictors. We observe an R-squared value of 0.094, which means that, taking into account precincts with yard signs and precincts adjacent to yard signs, both factors only explain 9.4\% of the variation in the vote share that went to McAuliffe's opponent Ken Cuccinelli. This tells us that yard signs are not a strong predictors of the overall differences in vote share between precincts. However, a low R-squared value does not mean that the signs have no effect, since both coefficients were significant in parts a and b. It is important to note that because the precincts were randomly assigned, other factors such as income or the political views of residents are not confounders. Random assignment spreads these factors evenly across the treatment and control groups, so they do not bias the estimated effect of the signs. Even so, these other factors that are not modeled still explain most of the differences in vote shares between precincts. 
+	To evaluate the fit of the model, we look at the R-squared value, which measures the proportion of variation in the dependent variable that is explained by the predictors. We observe an R-squared value of 0.094, which means that, taking into account precincts with yard signs and precincts adjacent to yard signs, both factors only explain 9.4\% of the variation in the vote share that went to McAuliffe's opponent Ken Cuccinelli. This tells us that yard signs are not strong predictors of the overall differences in vote share between precincts. However, a low R-squared value does not mean that the signs have no effect, since both coefficients were significant in parts a and b. It is important to note that because the precincts were randomly assigned, other factors such as income or the political views of residents are not confounders. Random assignment spreads these factors evenly across the treatment and control groups, so they do not bias the estimated effect of the signs. Even so, these other factors that are not modeled still explain most of the differences in vote shares between precincts. 
 	
 	\hl{The model has a weak fit (R-squared = 0.094), which means that yard signs have a real but small effect of about 4.2 percentage points on vote share, while other factors that are not modeled explain most of the variation.}
 	
